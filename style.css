@@ -1,0 +1,645 @@
+/* --- Google Fonts (Optional - Choose professional fonts) --- */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700&display=swap');
+
+/* --- CSS Variables --- */
+:root {
+    /* Add RGB versions of colors for rgba() overlays */
+    --rgb-primary-color: 0, 95, 113;      /* Corresponds to #005f73 */
+    --rgb-bg-color: 241, 243, 245;       /* Corresponds to #f1f3f5 */
+
+    /* Light Mode Colors (Keep existing) */
+    --bg-color: #f1f3f5;
+    --text-color: #212529;
+    --primary-color: #005f73;
+    --secondary-color: #e9ecef;
+    --accent-color: #0a9396;
+    --card-bg: #ffffff;
+    --border-color: #dee2e6;
+    --link-color: #005f73;
+    --link-hover-color: #0a9396;
+    --nav-bg-scrolled: rgba(255, 255, 255, 0.85);
+    --nav-border-scrolled: rgba(0, 0, 0, 0.1);
+    --nav-shadow-scrolled: 0 4px 15px rgba(0, 0, 0, 0.05);
+    /* --hero-bg-start: rgba(200, 220, 240, 0.2); -- REMOVED GRADIENT */
+    /* --hero-bg-end: rgba(241, 243, 245, 0); -- REMOVED GRADIENT */
+    --hero-text: #ffffff; /* Changed to White for better contrast */
+    --hero-subtext: #eeeeee; /* Changed to Light Grey */
+    --icon-color: #495057;
+    --icon-hover-bg: #dee2e6;
+    --footer-bg: #e9ecef;
+    --mobile-menu-bg: #ffffff;
+    --rgb-overlay-color: 0, 0, 0;
+    --overlay-opacity: 0.4;
+
+    /* Fonts (Keep existing) */
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Lato', sans-serif;
+}
+
+body.dark-mode {
+    /* Add RGB versions */
+    --rgb-primary-color: 148, 210, 189;   /* Corresponds to #94d2bd */
+    --rgb-bg-color: 18, 18, 18;           /* Corresponds to #121212 */
+
+    /* Dark Mode Colors (Keep existing) */
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --primary-color: #94d2bd;
+    --secondary-color: #1e1e1e;
+    --accent-color: #ade8f4;
+    --card-bg: #2c2c2c;
+    --border-color: #444;
+    --link-color: #94d2bd;
+    --link-hover-color: #ade8f4;
+    --nav-bg-scrolled: rgba(44, 44, 44, 0.85);
+    --nav-border-scrolled: rgba(255, 255, 255, 0.15);
+    --nav-shadow-scrolled: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* --hero-bg-start: rgba(148, 210, 189, 0.15); -- REMOVED GRADIENT */
+    /* --hero-bg-end: rgba(18, 18, 18, 0); -- REMOVED GRADIENT */
+    --hero-text: #ffffff;   /* Changed to White */
+    --hero-subtext: #e0e0e0; /* Changed to Light Grey */
+    --icon-color: #b0b0b0;
+    --icon-hover-bg: #3a3a3a;
+    --footer-bg: #1e1e1e;
+    --mobile-menu-bg: #2c2c2c;
+    --rgb-overlay-color: 0, 0, 0;
+    --overlay-opacity: 0.5;
+}
+
+
+/* --- Basic Reset & Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-secondary);
+    line-height: 1.7;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 16px;
+}
+/* Class added when mobile menu is open */
+body.mobile-nav-open {
+    overflow: hidden; /* Prevent scrolling background when mobile menu is open */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.2rem; margin-bottom: 2rem; text-align: center;}
+h3 { font-size: 1.4rem; color: var(--text-color); margin-bottom: 0.5rem;}
+
+p { margin-bottom: 1rem; }
+a { color: var(--link-color); text-decoration: none; transition: color 0.2s ease; }
+a[href="https://www.kcl.ac.uk/bhi"] { /* Updated href */
+    color: #7db48d;
+  }
+a[href="https://phidatalab.org/about-us/"]{
+    color: #7db48d;
+}
+
+a:hover { color: var(--link-hover-color); }
+img { max-width: 100%; height: auto; display: block; }
+ul { list-style: none; }
+
+/* --- Header & Navigation --- */
+#main-header { /* Changed from header to #main-header */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 0.5rem 5%; 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+}
+
+/* Style for the scrolled state */
+#main-header.scrolled nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--nav-border-scrolled);
+    border-radius: 50px;
+    background-color: transparent;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    transition: background-color 0.3s ease, border 0.3s ease, padding 0.3s ease;
+    
+}
+#theme-toggle {
+    display: none !important;
+  }
+/* Initial state: Make nav transparent */
+#main-header:not(.scrolled) nav {
+    background-color: transparent;
+    box-shadow: none;
+    /* transition is handled by the main header transition */
+}
+/* Adjust link color when header is transparent */
+#main-header:not(.scrolled) .nav-links a {
+    /* Choose a color visible on hero bg */
+    color: #fff; /* Assuming hero has dark/image bg */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add shadow for visibility */
+}
+#main-header:not(.scrolled) .logo {
+     color: #fff; /* White logo text on hero */
+     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+#main-header:not(.scrolled) #theme-toggle {
+     color: #fff; /* White theme toggle on hero */
+}
+
+nav {
+    max-width: 1100px; /* Max width of content inside header */
+    margin: 0 auto;
+    padding: 0.5rem 1.5rem; /* Default padding (will be overridden by .scrolled) */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease, border 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+    position: relative; /* Needed for mobile menu absolute positioning */
+}
+
+.logo-link { text-decoration: none; }
+.logo {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-primary);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+.logo i { margin-right: 0.5rem; font-size: 1.5rem; }
+
+/* --- SVG Logo Styling --- */
+.svg-logo svg {
+    height: 35px; /* Control overall size */
+    width: auto; /* Maintain aspect ratio */
+    vertical-align: middle; /* Align nicely with text if any */
+}
+
+.svg-logo .svg-primary {
+    stroke: var(--primary-color); /* Tealish blue */
+    fill: var(--primary-color); /* Use fill if needed for shapes */
+    transition: stroke 0.3s ease, fill 0.3s ease;
+}
+
+.svg-logo .svg-accent {
+    stroke: var(--accent-color); /* Brighter teal */
+     fill: var(--accent-color); /* Use fill if needed for shapes */
+    transition: stroke 0.3s ease, fill 0.3s ease;
+}
+
+ .svg-logo .svg-text {
+     fill: var(--primary-color); /* Use primary text color */
+     font-family: var(--font-primary); /* Use website font */
+      transition: fill 0.3s ease;
+ }
+
+/* Adjust SVG colors for dark mode */
+body.dark-mode .svg-logo .svg-primary,
+body.dark-mode .svg-logo .svg-text {
+     stroke: var(--primary-color); /* Light teal */
+     fill: var(--primary-color);
+}
+ body.dark-mode .svg-logo .svg-accent {
+     stroke: var(--accent-color); /* Lighter blue */
+     fill: var(--accent-color);
+ }
+
+ /* Adjust SVG colors when header is transparent over hero */
+ #main-header:not(.scrolled) .svg-logo .svg-primary,
+ #main-header:not(.scrolled) .svg-logo .svg-text,
+ #main-header:not(.scrolled) .svg-logo .svg-accent {
+      stroke:var(--primary-color);/* White color */
+      fill: var(--primary-color);
+ }
+
+/* Container for links and toggle */
+.nav-right-group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+.nav-links a {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    color: var(--text-color); /* Default text color */
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+.nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--accent-color); transition: width 0.3s ease; }
+.nav-links a:hover::after { width: 100%; }
+
+#theme-toggle {
+    background: none; border: none; color: var(--icon-color);
+    font-size: 1.3rem; cursor: pointer; padding: 0.5rem;
+    border-radius: 50%; transition: background-color 0.2s ease, color 0.3s ease;
+    margin-left: 0.5rem; /* Space between links and toggle */
+}
+#theme-toggle:hover { background-color: var(--icon-hover-bg); color: var(--link-hover-color); }
+
+/* Mobile Menu Toggle Button */
+#mobile-menu-toggle {
+    display: none; /* Hidden by default */
+    background: none; border: none; color: var(--icon-color);
+    font-size: 1.5rem; cursor: pointer; padding: 0.5rem;
+    z-index: 1001; /* Above nav content */
+}
+#main-header:not(.scrolled) #mobile-menu-toggle {
+    color: #706d6d; /* Ensure visible on hero */
+}
+
+
+/* --- Hero Section --- */
+/* --- Keep All CSS Variables and Other Rules Above --- */
+/* ... */
+
+/* --- Hero Section --- */
+#hero {
+    height: 100vh;
+    position: relative; /* Keep relative positioning for absolute children */
+    /* REMOVE display: flex; align-items: center; justify-content: center; */
+    text-align: center; /* Keep text-align for fallback */
+    overflow: hidden;
+    width: 100%;
+    padding: 0; /* Keep padding */
+    box-sizing: border-box;
+}
+
+/* --- Hero Background (No changes needed here, should be correct) --- */
+.hero-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Behind everything */
+
+    /* Background Image Setup */
+    background-image: url('images/background-logo.png'); /* Make sure path is correct */
+    background-size:contain;
+    background-position: center top;
+    background-repeat: no-repeat;
+
+    /* Opacity/Transition for Fade Effect */
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+    pointer-events: none;
+
+    /* Overlay Pseudo-element */
+    position: relative; /* For positioning ::before */
+}
+
+.hero-background::before {
+    content: '';
+    position: absolute;
+    inset: 0; /* Shortcut for top/left/right/bottom: 0 */
+    /* Color Overlay */
+    background-color: rgba(var(--rgb-overlay-color), var(--overlay-opacity));
+    z-index: 0;
+    transition: background-color 0.3s ease;
+    
+}
+
+/* --- Hero Content - Updated Centering Method --- */
+.hero-content {
+    /* Use Absolute Positioning for Centering */
+    position: absolute;
+    top: 50%;             /* Position top edge at center */
+    left: 50%;            /* Position left edge at center */
+    transform: translate(-50%, -50%); /* Shift element back by half its width/height */
+
+    /* Width Constraints */
+    width: 90%;          /* Take up most of width on small screens */
+    max-width: 1000px;    /* Limit max width */
+
+    z-index: 1;          /* Ensure content is above background/overlay */
+    text-align: center;  /* Ensure text inside is centered */
+    /* padding-top: 60px; */
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    color: var(--hero-text);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); */
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--hero-subtext);
+    /* margin-bottom: 0; */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+/* --- NEW: Hero Button Styling --- */
+.hero-button {
+    position: absolute;
+    /* bottom: -20 rem; */
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block; /* Allow margin/padding */
+    background-color: var(--accent-color);
+    color: #fff; /* White text on button */
+    padding: 0.8rem 1.8rem; /* Vertical and horizontal padding */
+    border-radius: 50px; /* Pill shape */
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase; /* Optional: Uppercase text */
+    letter-spacing: 0.5px; /* Optional: Spacing */
+    text-shadow: none; /* Remove shadow from button text */
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    border: 2px solid transparent; /* For potential hover effect */
+    z-index: -2;
+    margin-top: 28vh;
+    
+}
+
+.hero-button:hover {
+    background-color: var(--link-hover-color); /* Use link hover color */
+    color: #fff; /* Ensure text stays white */
+    transform: translateX(-50%) translateY(-2px); /* Slight lift effect */
+}
+
+/* --- Keep All Other Styles Below (Sections, Footer, Responsiveness, etc.) --- */
+/* ... */
+
+/* --- Small Adjustment for Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    /* ... other mobile styles ... */
+
+    /* Adjust hero content font sizes if needed */
+     .hero-content h1 {
+        font-size: 2.5rem; /* Maybe slightly smaller on mobile */
+    }
+     .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    .hero-button {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.5rem;
+        margin-top: 10vh;
+        width: 85%;
+        white-space: nowrap;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+     /* Ensure hero section still has enough top padding */
+    #hero { padding-top: 70px; }
+}
+
+/* ... */
+/* --- General Section Styling --- */
+main section {
+    padding: 6rem 5%;
+    background-color: var(--bg-color);
+    position: relative; z-index: 2;
+    transition: background-color 0.3s ease;
+    /* border-bottom: 1px solid var(--border-color); --- REMOVED */
+    
+}
+/* Optional: Add subtle background difference for alternate sections */
+/* main section:nth-of-type(even) {
+    background-color: var(--secondary-color);
+} */
+/* Remove extra padding from hero+section as hero handles its own padding now */
+#hero + section { padding-top: 6rem; }
+main section:last-of-type { padding-bottom: 6rem; }
+
+/* --- Team Section --- (Styles remain the same) */
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+.team-member-card { background-color: var(--card-bg); padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); text-align: center; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.team-member-card:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08); }
+.team-member-card img { width: 200px; height: 200px; border-radius: 50%; margin: 0 auto 1rem auto; object-fit: cover; border: 3px solid var(--secondary-color); }
+.team-member-card img[alt="Dr. Logan Ellis"] {
+    object-position: .1% center; 
+  }
+
+.team-member-card .position { font-size: 0.9rem; color: var(--primary-color); font-weight: 600; margin-bottom: 0.5rem; }
+.team-member-card .bio { font-size: 0.9rem; margin-bottom: 1rem; color: var(--text-color); opacity: 0.8; }
+.social-links a { color: var(--icon-color); margin: 0 0.5rem; font-size: 1.2rem; transition: color 0.2s ease; }
+.social-links a:hover { color: var(--accent-color); }
+
+/* --- Projects Section --- (Styles remain the same) */
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.project-card { background-color: var(--card-bg); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); transition: transform 0.2s ease, box-shadow 0.2s ease; display: flex; flex-direction: column; }
+.project-card:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08); }
+.project-card img { width: 100%; height: 200px; object-fit: cover; }
+.project-card h3 { padding: 1.5rem 1.5rem 0.5rem 1.5rem; }
+.project-card p { padding: 0 1.5rem 1.5rem 1.5rem; flex-grow: 1; font-size: 0.95rem; opacity: 0.9; }
+.project-link { display: block; padding: 1rem 1.5rem; background-color: var(--secondary-color); text-align: center; font-weight: 600; margin-top: auto; transition: background-color 0.2s ease, color 0.2s ease; }
+.project-link:hover { background-color: var(--accent-color); color: #fff; }
+.project-link i { margin-left: 0.3rem; font-size: 0.8em; }
+
+/* --- Publications Section --- (Styles remain the same) */
+#publications .publication-intro { /* Use # for ID and correct spelling */
+    font-size: 1rem; /* Slightly larger for intro text */
+    color: var(--primary-color); /* Use standard text color or --primary-color */
+    opacity: 0.9; /* Slightly muted */
+    text-align: center; /* Center the intro text */
+    max-width: 800px; /* Limit width for readability */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem; /* Space before the list starts */
+}
+.publication-list {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    /* Keep Scrolling styles */
+    max-height: 450px;
+    overflow-y: auto;
+    padding-right: 1em; /* Space for scrollbar */
+    /* Remove list styling */
+    list-style: none;
+    padding-left: 0; /* Remove default ul padding */
+}
+
+/* Style individual list items */
+.publication-list li {
+     /* Remove previous styling */
+    /* background-color: var(--card-bg); */
+    /* padding: 1rem 1.5rem; */
+    /* border-left: 4px solid var(--accent-color); */
+    margin-bottom: 1.5rem; /* Space between publications */
+    border-bottom: 1px solid var(--border-color); /* Separator line */
+    padding-bottom: 1.5rem; /* Space above separator */
+}
+.publication-list li:last-child {
+    border-bottom: none; /* No line after the last item */
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* Style the wrapper link */
+.publication-link-wrapper {
+    display: block; /* Make it block-level */
+    text-decoration: none; /* Remove default link underline */
+    color: inherit; /* Inherit text color from parent (li) */
+    padding: 0.5rem; /* Add some padding inside the clickable area */
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+/* Hover effect for the entire item */
+.publication-link-wrapper:hover {
+    background-color: var(--secondary-color); /* Subtle background change */
+}
+
+/* Style the different parts */
+.publication-title {
+    display: block; /* Each part on its own line */
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+}
+
+.publication-authors {
+    display: block;
+    font-size: 0.95rem;
+    /* Use a distinct but readable color - adjust if needed */
+    color: var(--content-link-color); /* Using the content link color */
+    margin-bottom: 0.3rem;
+}
+
+.publication-journal {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-color); /* Standard text color */
+    opacity: 0.8; /* Slightly muted */
+    margin-bottom: 0.5rem;
+}
+
+.publication-url {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--content-link-color); /* Using content link color */
+    word-break: break-all; /* Break long URLs */
+    opacity: 0.9;
+     /* text-decoration: underline; --- Optionally underline the URL */
+}
+
+/* --- Remove old publication link style --- */
+/* Delete or comment out this rule if it exists */
+/*
+.publication-list li a {
+    font-weight: 600;
+    margin-left: 0.5rem;
+}
+*/
+
+/* --- Contact Section --- (Styles remain the same) */
+.contact-info p { margin-bottom: 0.5rem; font-size: 1rem; }
+.contact-info i { margin-right: 0.7rem; color: var(--primary-color); width: 20px; text-align: center; }
+
+/* --- Footer --- */
+footer {
+    background-color: var(--footer-bg); color: var(--text-color);
+    text-align: center; padding: 1.5rem; font-size: 0.9rem;
+    border-top: 1px solid var(--border-color); /* Keep top border for footer */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 992px) {
+    /* Adjustments for tablet size if needed */
+}
+
+@media (max-width: 768px) {
+    body { font-size: 15px; }
+    h1 { font-size: 2.4rem; }
+    h2 { font-size: 1.9rem; }
+
+    /* --- Mobile Header --- */
+     /* Make header take full width when scrolled */
+    #main-header.scrolled nav {
+        max-width: calc(100% - 2rem); /* Full width minus padding */
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    #mobile-menu-toggle {
+        display: block; /* Show hamburger */
+    }
+
+    .nav-right-group {
+        /* Position off-screen initially */
+        position: fixed;
+        top: 0;
+        right: -100%; /* Start hidden to the right */
+        width: 70%; /* Menu width */
+        max-width: 300px;
+        height: 100vh;
+        background-color: var(--mobile-menu-bg);
+        flex-direction: column;
+        align-items: stretch; /* Stretch items */
+        padding: 5rem 1.5rem 1.5rem; /* Padding inside menu */
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.4s ease-in-out; /* Slide transition */
+        gap: 0; /* Reset gap */
+        z-index: 999; /* Below toggle button */
+    }
+
+    body.mobile-nav-open .nav-right-group {
+        right: 0; /* Slide in */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        margin-bottom: 1.5rem; /* Space between links and toggle */
+    }
+    .nav-links li { width: 100%; }
+    .nav-links a {
+        display: block;
+        padding: 0.8rem 0;
+        font-size: 1.1rem;
+        border-bottom: 1px solid var(--border-color);
+        color: var(--text-color); /* Ensure correct color */
+        text-shadow: none; /* Remove shadow in menu */
+    }
+     .nav-links a::after { display: none; } /* Remove underline effect */
+     .nav-links li:last-child a { border-bottom: none; }
+
+    #theme-toggle {
+        margin-left: 0; /* Remove margin */
+        align-self: center; /* Center toggle button in menu */
+    }
+
+
+    /* --- Other Mobile Adjustments --- */
+    #hero { padding-top: 80px; }
+    .hero-content h1 { font-size: 2.5rem; }
+    .hero-content p { font-size: 1rem; }
+    main section { padding: 4rem 1rem; }
+    #hero + section { padding-top: 4rem; } /* Adjust spacing */
+    .team-grid, .projects-grid { grid-template-columns: 1fr; }
+}

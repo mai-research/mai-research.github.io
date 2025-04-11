@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAI - Medical Artificial Intelligence Research Group</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header id="main-header"> <nav>
+            <a href="#" class="logo-link">
+                <div class="logo svg-logo"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" width="100" height="40" aria-labelledby="logoTitle" role="img">
+                    <title id="logoTitle">MAI Logo</title>
+                    <path class="svg-primary" d="M10 35 V5 L20 15 L30 5 V35" stroke-width="4" fill="none"/>
+                    <path class="svg-accent" d="M40 35 L45 20 L50 35 M42.5 28 H47.5" stroke-width="3" fill="none"/>
+                     <line class="svg-accent" x1="58" y1="20" x2="58" y2="35" stroke-width="3"/>
+                    <circle class="svg-accent" cx="58" cy="15" r="2" fill="currentColor"/> 
+                    <!-- <text x="70" y="30" class="svg-text" font-size="20" font-weight="bold">MAI</text> -->
+               </svg>
+            </div>
+            </a>
+
+            <div class="nav-right-group">
+                <ul class="nav-links">
+                    <!-- <li><a href="#about">About</a></li> -->
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button id="theme-toggle" aria-label="Switch to dark mode" title="Switch to dark mode">
+                     <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+
+            <button id="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
+                 <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-background"></div> <div class="hero-content">
+                <h1>Advancing Medical Artificial Intelligence</h1>
+                 <p style="text-align:justify"> The MAI (Medical AI) lab specialises in different aspects of methodological development and applications of fundamental AI methodologies in medicine and health. Our research involves various aspects of knowledge representation and reasoning, deep learning, time-series analytics and the development of the next generation LLMs in the context of medicine and health. We are based at the <a href="https://www.kcl.ac.uk/bhi" target="_">Department of Biostatistics and Health Informatics</a>, <href="https://www.kcl.ac.uk/" target ="_">King's College London</a> and are part of the large <a href="https://phidatalab.org/about-us/" target="_">PHI Data Lab</a>.
+
+                 <a href="#projects" class="hero-button">Explore Our Research</a>
+
+                 </p>
+                </div>
+        </section>
+
+        <!-- <section id="about">
+            <h2>About Us</h2>
+            The MAI (Medical AI) lab specialises in different aspects of methodological development and applications of fundamental AI methodologies in medicine and health. Our research involves various aspects of knowledge representation and reasoning, deep learning, time-series analytics and the development of the next generation LLMs in the context of medicine and health. We are based at the <a href="https://www.kcl.ac.uk/bhi" target="_">Department of Biostatistics and Health Informatics</a>, <href="https://www.kcl.ac.uk/" target =_">King's College London</a> and are part of the large <a href="https://phidatalab.org/about-us/">PHI Data Lab</a>.
+        </section> -->
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                     <img src="images/method.png" alt="Method Architecture">
+                    <h3><a href="method.html" target = "_new">METHOD</a></h3> 
+                <p style="text-align:justify">
+                    METHOD is a novel LLM based on the transformer architecture specifically designed for healthcare applications, addressing unique challenges in modeling patient trajectories from electronic health records. Unlike generic transformer models, METHOD introduces several innovations tailored to clinical data: a patient-aware attention mechanism that ensures strict isolation of patient information while enabling efficient batch processing; an adaptive sliding window attention scheme that captures multi-scale temporal dependencies; and a U-Net inspired architecture with dynamic skip connections for effective long sequence processing.
+
+                    The model overcomes current limitations in handling variable-specific information loss, distribution preservation, and temporal resolution challenges. Experimental evaluation on MIMIC-IV databases demonstrates METHOD's robust performance across varying sequence lengths, particularly for high-severity cases, with improved clinical semantic alignment compared to baseline models.
+
+                    METHOD represents a significant advancement in healthcare AI, offering enhanced computational efficiency while preserving clinically relevant temporal structures—a crucial step toward transformer architectures optimized for healthcare applications.
+                </p>
+                     <a href="method.html" target="_blank" rel="noopener noreferrer" class="project-link">View Project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+                
+
+                <div class="project-card">
+                    <img src="images/pypots.png" alt="PyPOTS Architecture">
+                   <h3>PyPOTS</h3> <p style="text-align:justify">We are part of the <a href="https://pypots.com/about/" target ="_new">PyPOTS team</a>. PyPOTS is a Python toolkit designed for machine learning and data mining on complex time series data with missing values. It offers a collection of state-of-the-art neural network models capable of performing various analytical tasks such as imputation, classification, clustering, forecasting, anomaly detection, and data cleaning on incomplete, irregularly sampled multivariate time series. The toolkit simplifies the process of working with partially observed time series (pOTS) - i.e. time series with missing values, by providing unified APIs, detailed documentation, and practical examples. Our <link a href="https://github.com/LinglongQian/CSAI" target=_new"> CSAI</a> model is part of the PyPOTS package.</p>
+                    <a href="https://github.com/WenjieDu/PyPOTS/" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+               </div>
+               
+               <div class="project-card">
+                <img src="images/csai.png" alt="CSAI">
+               <h3>CSAI</h3> <p style="text-align:justify">The Conditional Self-Attention Imputation (CSAI) is an innovative Neural Network architecture for handling complex missing data patterns in multivariate healthcare time series. CSAI implements an attention-based hidden state initialisation technique capturing both long- and short-range temporal dependencies; a domain-informed temporal decay mechanism adjusting to clinical data recording patterns; and a non-uniform masking strategy modeling non-random missingness by calibrating weights based on temporal and cross-sectional data characteristics. CSAI is available as a stand-alone algorithm on GitHub but is also part of the PyPOTS Python library, which can be installed via pip.</p>
+                <a href="https://github.com/LinglongQian/CSAI" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+           </div>
+           <div class="project-card">
+            <img src="images/deari.png" alt="DEARI">
+           <h3>DEARI</h3> <p style="text-align:justify">DEARI is an innovative deep learning model designed to address complex missing data challenges in heterogeneous multivariate time series. Building upon BRITS architecture, DEARI introduces three key innovations: a scalable deep attention recurrent neural network, a self-supervised metric learning approach, and a Bayesian marginalization strategy for uncertainty quantification.</p>
+            <a href="https://github.com/LinglongQian/CSAI" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+       </div>
+        </section>
+        
+        <section id="team">
+            <h2>Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member-card">
+                     <img src="images/zina.png" alt="Dr Ibrahim">
+                    <h3>Dr Zina Ibrahim</h3> <p class="position">Leader</p> <p class="position">Associate Professor in Artificial Intelligence in Medicine.</p> 
+                    <p style="text-align:justify" class="bio"> Zina's research spans theoretical foundations and applications of knowledge representation, deep learning, and multi-agent systems, specifically in biomedical knowledge discovery, healthcare delivery, and medical decision support. 
+                    </p>
+                    <div class="social-links">
+                         <a href="mailto:zina.ibrahim@kcl.ac.uk" title="Email Zina Ibrahim"><i class="fa-solid fa-envelope"></i></a>
+                         <a href="https://github.com/zibrahim" target="_blank" rel="noopener noreferrer" title="Zina Ibrahim GitHub"><i class="fa-brands fa-github"></i></a>
+                         <a href="linkedin.com/in/zina-ibrahim-756ab01a" target="_blank" rel="noopener noreferrer" title="Zina Ibrahim LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="team-member-card">
+                    <img src="images/linglong.jpg" alt="Dr Qian">
+                   <h3>Dr. Linglong Qian</h3> <p class="position">Research Associate</p> <p class="position">Expert in medical LLMs and deep learning.</p> 
+                   <p style="text-align:justify" class="bio">Linglong's research bridges deep learning, symbolic reasoning, and medical data science, with a focus on the integration of temporal dynamics, multimodal signals, and clinical text. He is developing the foundational frameworks for health outcome forecasting, such as METHOD models, and contributes to open-source tools for time-series imputation and benchmarking.
+                    </p> 
+                   <div class="social-links">
+                        <a href="mailto:zina.ibrahim@kcl.ac.uk" title="Email Zina Ibrahim"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="https://github.com/zibrahim" target="_blank" rel="noopener noreferrer" title="Zina Ibrahim GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="linkedin.com/in/zina-ibrahim-756ab01a" target="_blank" rel="noopener noreferrer" title="Zina Ibrahim LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                   </div>
+                </div>
+                   <div class="team-member-card">
+                    <img src="images/hugh.png" alt="Dr. Logan Ellis">
+                   <h3>Dr Hugh Logan-Ellis</h3> <p class="position">PhD Student</p> <p class="position">A medical doctor working on finding out what doctors want.</p> <div class="social-links">
+                        <a href="mailto:linglong.qian@kcl.ac.uk" title="Email Logan Ellis"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="https://github.com/LinglongQian" target="_blank" rel="noopener noreferrer" title="Logan Ellis GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="linkedin.com/in/linglongqian" target="_blank" rel="noopener noreferrer" title="Logan Ellis LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                   </div>
+               </div>
+               <div class="team-member-card">
+                <img src="images/joseph.jpg" alt="Joseph Raj">
+               <h3>Mr Joseph Arul Raj</h3> <p class="position">Research Associate</p><p class="position">Implementation of deep models for healthcare</p> <p style="text-align:justify" class="bio">Joseph's research focuses on developing deep learning models for electronic health record data imputation. With a background in computer science and big data analytics, he specializes in enhancing predictive models for adverse clinical outcomes from hospital records. His work aims to make these models more accurate and clinically impactful.</p> <div class="social-links">
+                    <a href="mailto:joseph_arul_raj@kcl.ac.uk" title="Email Joseph"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://github.com/joseph-arulraj" target="_blank" rel="noopener noreferrer" title="Joseph's GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="linkedin.com/in/joseph-arul-raj-aa6915164" target="_blank" rel="noopener noreferrer" title="Joseph's LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+               </div>
+           </div>
+                 
+        </section>
+
+        <section id="publications">
+            <h2>Publications</h2>
+            <p class="publication-intro">Explore our contributions to the field of medical artificial intelligence.</p>
+            <ul class="publication-list">
+                <li>
+                    <a href="https://doi.org/10.1038/s41746-024-01408-x" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">The early warning paradox</span> <span class="publication-authors">Logan Ellis, H., Palmer, E., Teo, J.T. et al.</span> <span class="publication-journal">npj Digital Medicine 8, 81 (2025)</span>  </a>
+                </li>
+
+                <li>
+                    <a href="https://arxiv.org/abs/2411.03941" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">Fine-tuning – a Transfer Learning approach</span> <span class="publication-authors">Raj, J. A., Qian, L., & Ibrahim, Z.</span> <span class="publication-journal">2024</span> </a>
+                </li>
+
+                <li>
+                    <a href="https://arxiv.org/abs/2407.08442" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">How Deep is your Guess? A Fresh Perspective on Deep Learning for Medical Time-Series Imputation</span> <span class="publication-authors">Qian, L., Wang, T., Wang, J., Ellis, H. L., Mitra, R., Dobson, R., & Ibrahim, Z.</span> <span class="publication-journal">2025</span> </a>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2406.12747" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">TSI-Bench: Benchmarking Time Series Imputation</span> 
+                        <span class="publication-authors">Du, W., Wang, J., Qian, L., Yang, Y., Ibrahim, Z., Liu, F., Wang, Z., Liu, H., Zhao, Z., Zhou, Y., Wang, W., Ding, K., Liang, Y., Prakash, B. A., & Wen, Q.</span> 
+                        <span class="publication-journal">2024</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2405.17508" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">Beyond Random Missingness: Clinically Rethinking for Healthcare Time Series Imputation</span> 
+                        <span class="publication-authors">Qian, L., Yang, Y., Du, W., Wang, J., Dobsoni, R., & Ibrahim, Z.</span> 
+                        <span class="publication-journal">2025</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2401.02258" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">Uncertainty-Aware Deep Attention Recurrent Neural Network for Heterogeneous Time Series Imputation</span> 
+                        <span class="publication-authors">Qian, L., Ibrahim, Z., & Dobson, R.</span> 
+                        <span class="publication-journal">2024</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2312.16713" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">Knowledge Enhanced Conditional Imputation for Healthcare Time-series</span> 
+                        <span class="publication-authors">Qian, L., Raj, J. A., Ellis, H. L., Zhang, A., Zhang, Y., Wang, T., Dobson, R. J., & Ibrahim, Z.</span> 
+                        <span class="publication-journal">2024</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2312.13103" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">Exploring Multimodal Large Language Models for Radiology Report Error-checking</span> 
+                        <span class="publication-authors">Wu, J., Kim, Y., Keller, E. C., Chow, J., Levine, A. P., Pontikos, N., Ibrahim, Z., Taylor, P., Williams, M. C., & Wu, H.</span> 
+                        <span class="publication-journal">2024</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://doi.org/10.1177/20552076231211551" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">Moving from development to implementation of digital innovations within the NHS: myHealthE</span> 
+                        <span class="publication-authors">Morris AC, Ibrahim Z, Moghraby OS, et al.</span> 
+                        <span class="publication-journal">DIGITAL HEALTH (2023)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://doi.org/10.1016/j.jbi.2023.104358" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">Discharge summary hospital course summarisation of in patient Electronic Health Record text</span> 
+                        <span class="publication-authors">Searle, T., Ibrahim, Z., Teo, J., & Dobson, R. J. B.</span> 
+                        <span class="publication-journal">Journal of Biomedical Informatics, 141, 104358 (2023)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://doi.org/10.1111/camh.12571" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">Assessing the feasibility of a web-based outcome measurement system in CAMHS – myHealthE</span> 
+                        <span class="publication-authors">Morris, A.C., Ibrahim, Z., Heslin, M., Moghraby, O.S., et al.</span> 
+                        <span class="publication-journal">Child Adolesc Ment Health, 28: 128–147 (2023)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://ceur-ws.org/Vol-3479/paper7.pdf" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">Addressing Class Imbalance in Electronic Health Records Data Imputation</span> 
+                        <span class="publication-authors">Qian, L., Ibrahim, Z., Zhang, A., Dobson, R.J.B.</span> 
+                        <span class="publication-journal">6th Int. Workshop on Knowledge Discovery From Healthcare Data (2023)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://doi.org/10.1186/s40814-021-00959-0" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">OPTIMA: Remote recruitment and assessment for ADHD referrals</span> 
+                        <span class="publication-authors">Kostyrka-Allchorne, K., Ballard, C., Byford, S. et al.</span> 
+                        <span class="publication-journal">Pilot Feasibility Stud 8, 1 (2022)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://kclpure.kcl.ac.uk/portal/files/188150736/2211.07126v1.pdf" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">Summarisation of Electronic Health Records with Clinical Concept Guidance</span> 
+                        <span class="publication-authors">Searle, T., Ibrahim, Z., Teo, J., & Dobson, R.</span> 
+                        <span class="publication-journal">2022</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://doi.org/10.1007/978-3-031-23443-9_3" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">Multi-modal Latent-Space Self-alignment for Super-Resolution Cardiac MR Segmentation</span> 
+                        <span class="publication-authors">Deng, Y. et al.</span> 
+                        <span class="publication-journal">STACOM 2022, LNCS vol. 13593</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://doi.org/10.3389/fdgth.2022.874237" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">Evaluating physical urban features in several mental illnesses</span> 
+                        <span class="publication-authors">Mahabadi, Z., Mahabadi, M., Velupillai, S., Roberts, A., McGuire, P., Ibrahim, Z., & Patel, R.</span> 
+                        <span class="publication-journal">Frontiers in Digital Health (2022)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://doi.org/10.1093/nar/gkac364" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">GEOexplorer: a webserver for gene expression analysis and visualisation</span> 
+                        <span class="publication-authors">Hunt, G. P., Grassi, L., Henkin, R., Smeraldi, F., et al.</span> 
+                        <span class="publication-journal">Nucleic Acids Research, 50(W1): W367–W374 (2022)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://doi.org/10.1016/j.jbi.2021.103938" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">Estimating redundancy in clinical text</span> 
+                        <span class="publication-authors">Searle, T., Ibrahim, Z., Teo, J., & Dobson, R.</span> 
+                        <span class="publication-journal">Journal of Biomedical Informatics, 124, 103938 (2021)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://doi.org/10.1016/j.artmed.2021.102083" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">Multi-domain clinical natural language processing with MedCAT: The Medical Concept Annotation Toolkit</span>
+                        <span class="publication-authors">Kraljevic, Z., Searle, T., Shek, A., Roguski, L., Noor, K., Bean, D., Mascio, A., Zhu, L., Folarin, A. A., Roberts, A., Bendayan, R., Richardson, M. P., Stewart, R., Shah, A. D., Wong, W. K., Ibrahim, Z., Teo, J. T., & Dobson, R. J. B.</span>
+                        <span class="publication-journal">Artificial Intelligence in Medicine, 117, 102083 (2021)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://doi.org/10.1109/JBHI.2021.3089287" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">A Knowledge Distillation Ensemble Framework for Predicting Short- and Long-Term Hospitalization Outcomes From Electronic Health Records Data</span>
+                        <span class="publication-authors">Z. M. Ibrahim et al.</span>
+                        <span class="publication-journal">IEEE Journal of Biomedical and Health Informatics, vol. 26, no. 1, pp. 423-435 (2022)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://doi.org/10.1093/jamia/ocaa295" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">Ensemble learning for poor prognosis predictions: A case study on SARS-CoV-2</span>
+                        <span class="publication-authors">Honghan Wu, Huayu Zhang, Andreas Karwath, Zina Ibrahim, Ting Shi, Xin Zhang, Kun Wang, Jiaxing Sun, Kevin Dhaliwal, Daniel Bean, Victor Roth Cardoso, Kezhi Li, James T Teo, Amitava Banerjee, Fang Gao-Smith, Tony Whitehouse, Tonny Veenith, Georgios V Gkoutos, Xiaodong Wu, Richard Dobson, Bruce Guthrie</span>
+                        <span class="publication-journal">Journal of the American Medical Informatics Association, Volume 28, Issue 4, Pages 791–800 (2021)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://doi.org/10.1371/journal.pone.0243437" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">The side effect profile of Clozapine in real world data of three large mental health hospitals</span>
+                        <span class="publication-authors">Iqbal E, Govind R, Romero A, Dzahini O, Broadbent M, et al.</span>
+                        <span class="publication-journal">PLOS ONE 15(12): e0243437 (2020)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://doi.org/10.1016/j.neurobiolaging.2020.06.023" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">An epigenome-wide association study of Alzheimer's disease blood highlights robust DNA hypermethylation in the HOXB6 gene</span>
+                        <span class="publication-authors">Roubroeks, J. A. Y., Smith, A. R., Smith, R. G., Pishva, E., Ibrahim, Z., et al.</span>
+                        <span class="publication-journal">Neurobiology of Aging, 95, 26–45 (2020)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">Added value of biomarkers and polygenic risk scores as risk factors for coronary artery disease</span>
+                        <span class="publication-authors">Sharapova, N., Maxwell, J. M., Glanville, K., Hagenaars, S. P., Russell, R., Ibrahim, Z. M., & Lewis, C. M.</span>
+                        <span class="publication-journal">GENETIC EPIDEMIOLOGY, Vol. 44, No. 5, pp. 516-516 (2020)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://doi.org/10.18653/v1/2020.bionlp-1.8" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">Experimental Evaluation and Development of a Silver-Standard for the MIMIC-III Clinical Coding Dataset</span>
+                        <span class="publication-authors">Searle, T., Ibrahim, Z., & Dobson, R.</span>
+                        <span class="publication-journal">Proceedings of the 19th SIGBioMed Workshop on Biomedical Language Processing (2020)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2006.07358" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">Comparing Natural Language Processing Techniques for Alzheimer's Dementia Prediction in Spontaneous Speech</span>
+                        <span class="publication-authors">Searle, T., Ibrahim, Z., & Dobson, R.</span>
+                        <span class="publication-journal">(2020)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://doi.org/10.1093/jamia/ocz211" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">On classifying sepsis heterogeneity in the ICU: insight using machine learning</span>
+                        <span class="publication-authors">Zina M Ibrahim, Honghan Wu, Ahmed Hamoud, Lukas Stappen, Richard J B Dobson, Andrea Agarossi</span>
+                        <span class="publication-journal">Journal of the American Medical Informatics Association, Volume 27, Issue 3, Pages 437–443 (2020)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/2002.08901" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">Identifying physical health comorbidities in a cohort of individuals with severe mental illness: An application of SemEHR</span>
+                        <span class="publication-authors">Bendayan, R., Wu, H., Kraljevic, Z., Stewart, R., Searle, T., Chaturvedi, J., Das-Munshi, J., Ibrahim, Z., Mascio, A., Roberts, A., Bean, D., & Dobson, R.</span>
+                        <span class="publication-journal">(2020)</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+             <p>Have questions about our research or interested in collaboration? Contact us!</p>
+            <div class="contact-info">
+                <p><i class="fa-solid fa-location-dot"></i> Department of Biostatistics and Health Informatics, KCL</p>
+
+                 <p><i class="fa-solid fa-envelope"></i> <a href="mailto:zina.ibrahim@kcl.ac.uk">zina.ibrahim@kcl.ac.uk</a></p>
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> MAI Research Group. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
