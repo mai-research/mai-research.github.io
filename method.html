@@ -52,7 +52,7 @@
             <h2>Overview</h2>
             <div class="content-container">
                 <p style="text-align:justify">
-                    METHOD is a novel transformer architecture specifically designed for healthcare applications, addressing unique challenges in modeling patient trajectories from electronic health records. Unlike generic transformer models, METHOD introduces several innovations tailored to clinical data: a patient-aware attention mechanism that ensures strict isolation of patient information while enabling efficient batch processing; an adaptive sliding window attention scheme that captures multi-scale temporal dependencies; and a U-Net inspired architecture with dynamic skip connections for effective long sequence processing.
+                    <a href ="https://arxiv.org/abs/2505.17054" target="_new">METHOD (arxiv preprint) </a> is a novel transformer architecture specifically designed for healthcare applications, addressing unique challenges in modeling patient trajectories from electronic health records. Unlike generic transformer models, METHOD introduces several innovations tailored to clinical data: a patient-aware attention mechanism that ensures strict isolation of patient information while enabling efficient batch processing; an adaptive sliding window attention scheme that captures multi-scale temporal dependencies; and a U-Net inspired architecture with dynamic skip connections for effective long sequence processing.
                 </p>
                 <p style="text-align:justify">
                     The model builds upon the tokenization strategy of ETHOS (Enhanced Transformer for Health Outcome Simulation) while overcoming its limitations in handling variable-specific information loss, distribution preservation, and temporal resolution challenges. Experimental evaluation on MIMIC-IV databases demonstrates METHOD's robust performance across varying sequence lengths, particularly for high-severity cases, with improved clinical semantic alignment compared to baseline models.
@@ -67,6 +67,15 @@
             <h2>Publications</h2>
             <p class="publication-intro">Most of our research output is currently being prepared for submission to peer-reviewed journals. The link below contains what has already been published.</p>
             <ul class="publication-list">
+                <li>
+                    <a href="https://arxiv.org/abs/2505.17054" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">METHOD: Modular Efficient Transformer for Health Outcome Discovery
+</span> 
+                        <span class="publication-authors">Linglong Qian and Zina Ibrahim</span> 
+                        <span class="publication-journal">Arxiv(2025)</span>
+                    </a>
+                </li>
+
                 <li>
                     <a href="https://doi.org/10.1038/s41746-024-01408-x" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
                         <span class="publication-title">The early warning paradox</span> 
@@ -83,9 +92,17 @@
             <ul class="publication-list">
 
                 <li>
+                    <a href="talks/aifestival.pdf" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
+                        <span class="publication-title">Patient Trajectories with AI: from
+Generation to Insight, the King's Festival on AI</span> 
+                        <span class="publication-authors"> May 2025</span> 
+                    </a>
+                </li>
+
+                <li>
                     <a href="talks/cogstack.pdf" target="_blank" rel="noopener noreferrer" class="publication-link-wrapper">
                         <span class="publication-title">Showcasing the Architectural Components of METHOD at the Annual CogStack Symposium</span> 
-                        <span class="publication-authors"> November 2025</span> 
+                        <span class="publication-authors"> November 2024</span> 
                     </a>
                 </li>
 
