@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Dr Zina Ibrahim",
+    "image": "images/zina.png",
+    "image_alt": "Dr Ibrahim",
+    "role_1": "Leader",
+    "role_2": "Associate Professor in Artificial Intelligence in Medicine.",
+    "bio": "Zina's research spans theoretical foundations and applications of knowledge representation, deep learning, and multi-agent systems, specifically in biomedical knowledge discovery, healthcare delivery, and medical decision support.",
+    "email": "zina.ibrahim@kcl.ac.uk",
+    "github": "https://github.com/zibrahim",
+    "linkedin": "https://linkedin.com/in/zina-ibrahim-756ab01a"
+  },
+  {
+    "name": "Dr. Linglong Qian",
+    "image": "images/linglong.jpg",
+    "image_alt": "Dr Qian",
+    "role_1": "Postdoctoral Researcher",
+    "role_2": "Expert in medical LLMs and deep learning.",
+    "bio": "Linglong's research bridges deep learning, symbolic reasoning, and medical data science, with a focus on the integration of temporal dynamics, multimodal signals, and clinical text. He is developing the foundational frameworks for health outcome forecasting, such as METHOD models, and contributes to open-source tools for time-series imputation and benchmarking.",
+    "email": "linglong.qian@kcl.ac.uk",
+    "github": "https://github.com/LinglongQian",
+    "linkedin": "https://linkedin.com/in/linglongqian"
+  },
+  {
+    "name": "Dr Hugh Logan-Ellis",
+    "image": "images/hugh.png",
+    "image_alt": "Dr. Logan Ellis",
+    "role_1": "Clinical Lecturer, St Thomas’ Hospital Campus",
+    "role_2": "Physician (General Internal Medicine & Endocrinology) and scientist (clinical AI and latent health status measurement).",
+    "bio": "Hugh’s research focuses on the pragmatic extraction of health measures from electronic health records (EHRs), addressing critical gaps in clinical decision support. Hugh's research coined the early warning paradox, exploring how retrospective AI validation can undervalue life-saving tools, and the polar bear problem, where models learn to mirror clinical suspicion rather than pure physiology. Hugh’s current work aims to move AI from predicting fate to measuring state by developing digital twins—physiological simulators that leverage foundation models and clinical embeddings to provide transparent, real-time insights into a patient’s underlying physiological reserve.",
+    "email": "hugh.logan_ellis@kcl.ac.uk",
+    "github": "https://github.com/HughLoganEllis",
+    "linkedin": "https://linkedin.com/in/hugh-logan-ellis"
+  },
+  {
+    "name": "Mr Joseph Arul Raj",
+    "image": "images/joseph.jpg",
+    "image_alt": "Joseph Raj",
+    "role_1": "PhD Student (DRIVE-Health CDT)",
+    "role_2": "NeuroSymbolic and Multimodal AI for Healthcare",
+    "bio": "Joseph is a PhD student at King's College London. His research focuses on developing NeuroSymbolic models for healthcare data, particularly using brain imaging data. With a background in computer science and big data analytics, he specializes in enhancing predictive models for adverse clinical outcomes from hospital records. His past work has involved developing pipelines and frameworks for electronic health records, with a focus on missing data imputation, feature selection bias, and knowledge graph enrichment.",
+    "email": "joseph_arul_raj@kcl.ac.uk",
+    "github": "https://github.com/joseph-arulraj",
+    "linkedin": "https://linkedin.com/in/joseph-arul-raj-aa6915164"
+  },
+  {
+    "name": "Dr Zhangshu Joshua Jiang",
+    "image": "images/josh.png",
+    "image_alt": "Joshua",
+    "role_1": "PhD Student (DRIVE-Health CDT)",
+    "role_2": "Neurosciences Fellow, Cleveland Clinic London",
+    "bio": "Joshua combines clinical neuroscience practice with research into trustworthy generative AI for healthcare. He is currently a Neurosciences Fellow at Cleveland Clinic London and a PhD student in Health Data Science at King’s College London, where his research focuses on building AI systems that reason more like clinicians and less like black boxes. His current work includes conducting clinical neurology and neuro-rehabilitation at Cleveland Clinic London. He also develops multi-agent generative AI systems for clinical decision support as part of his doctoral research, and explores approaches to make AI reasoning transparent, interpretable, and aligned with real clinical workflows.",
+    "email": "zhangshu.j.jiang@kcl.ac.uk",
+    "github": "https://github.com/z0shua",
+    "linkedin": "https://linkedin.com/in/zhangshu-jiang"
+  },
+  {
+    "name": "Mr Haoyu Wang",
+    "image": "images/haoyu.jpg",
+    "image_alt": "Haoyu Wang",
+    "role_1": "Researcher",
+    "role_2": "",
+    "bio": "Haoyu's research focuses on reproducible benchmarks for multimodal clinical data analysis, particularly the time-aligned fusion of ICU time-series and clinical notes. He is currently developing TIMELY-Bench, a benchmark framework for evaluating fusion strategies across vital signs, lab results, medications, and clinical text in MIMIC-III/IV datasets. With a background in computer science and experience in deep learning for time-series forecasting, his broader interests include multimodal learning for healthcare and applying large language models to unstructured clinical reports.",
+    "email": "haoyu.7.wang@kcl.ac.uk",
+    "github": "https://github.com/haoyu-haoyu",
+    "linkedin": "https://www.linkedin.com/in/haoyu-wang-abb052236/"
+  }
+]

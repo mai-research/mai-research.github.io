@@ -1,0 +1,650 @@
+[
+  {
+    "title": "Multi-domain clinical natural language processing with MedCAT: the medical concept annotation toolkit",
+    "authors": "Z Kraljevic, T Searle, A Shek, L Roguski, K Noor, D Bean, A Mascio, L Zhu, ...",
+    "year": "2021",
+    "publication": "Artificial intelligence in medicine 117, 102083, 2021",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&citation_for_view=Fka9HMAAAAAJ:RGFaLdJalmkC",
+    "citation_id": "Fka9HMAAAAAJ:RGFaLdJalmkC"
+  },
+  {
+    "title": "Knowledge graph prediction of unknown adverse drug reactions and validation in electronic health records",
+    "authors": "DM Bean, H Wu, E Iqbal, O Dzahini, ZM Ibrahim, M Broadbent, R Stewart, ...",
+    "year": "2017",
+    "publication": "Scientific reports 7 (1), 16416, 2017",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&citation_for_view=Fka9HMAAAAAJ:hFOr9nPyWt4C",
+    "citation_id": "Fka9HMAAAAAJ:hFOr9nPyWt4C"
+  },
+  {
+    "title": "on behalf of the AddNeuroMed C (2012) Mitochondrial dysfunction and immune activation are detectable in early Alzheimer’s disease blood",
+    "authors": "K Lunnon, Z Ibrahim, P Proitsi, A Lourdusamy, S Newhouse, M Sattlecker, ...",
+    "year": "2012",
+    "publication": "J Alzheimers Dis 30, 685-710, 2012",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&citation_for_view=Fka9HMAAAAAJ:ULOm3_A8WrAC",
+    "citation_id": "Fka9HMAAAAAJ:ULOm3_A8WrAC"
+  },
+  {
+    "title": "SemEHR: A general-purpose semantic search system to surface semantic data from clinical notes for tailored care, trial recruitment, and clinical research",
+    "authors": "H Wu, G Toti, KI Morley, ZM Ibrahim, A Folarin, R Jackson, I Kartoglu, ...",
+    "year": "2018",
+    "publication": "Journal of the American Medical Informatics Association 25 (5), 530-537, 2018",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&citation_for_view=Fka9HMAAAAAJ:qUcmZB5y_30C",
+    "citation_id": "Fka9HMAAAAAJ:qUcmZB5y_30C"
+  },
+  {
+    "title": "On classifying sepsis heterogeneity in the ICU: insight using machine learning",
+    "authors": "ZM Ibrahim, H Wu, A Hamoud, L Stappen, RJB Dobson, A Agarossi",
+    "year": "2020",
+    "publication": "Journal of the American Medical Informatics Association 27 (3), 437-443, 2020",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&citation_for_view=Fka9HMAAAAAJ:k_IJM867U9cC",
+    "citation_id": "Fka9HMAAAAAJ:k_IJM867U9cC"
+  },
+  {
+    "title": "Identification of adverse drug events from free text electronic patient records and information in a large mental health case register",
+    "authors": "E Iqbal, R Mallah, RG Jackson, M Ball, ZM Ibrahim, M Broadbent, ...",
+    "year": "2015",
+    "publication": "PloS one 10 (8), e0134208, 2015",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&citation_for_view=Fka9HMAAAAAJ:Zph67rFs4hoC",
+    "citation_id": "Fka9HMAAAAAJ:Zph67rFs4hoC"
+  },
+  {
+    "title": "Comparing natural language processing techniques for Alzheimer's dementia prediction in spontaneous speech",
+    "authors": "T Searle, Z Ibrahim, R Dobson",
+    "year": "2020",
+    "publication": "arXiv preprint arXiv:2006.07358, 2020",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&citation_for_view=Fka9HMAAAAAJ:YFjsv_pBGBYC",
+    "citation_id": "Fka9HMAAAAAJ:YFjsv_pBGBYC"
+  },
+  {
+    "title": "The side effect profile of Clozapine in real world data of three large mental health hospitals",
+    "authors": "E Iqbal, R Govind, A Romero, O Dzahini, M Broadbent, R Stewart, T Smith, ...",
+    "year": "2020",
+    "publication": "PloS one 15 (12), e0243437, 2020",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&citation_for_view=Fka9HMAAAAAJ:M3NEmzRMIkIC",
+    "citation_id": "Fka9HMAAAAAJ:M3NEmzRMIkIC"
+  },
+  {
+    "title": "An epigenome-wide association study of Alzheimer's disease blood highlights robust DNA hypermethylation in the HOXB6 gene",
+    "authors": "JAY Roubroeks, AR Smith, RG Smith, E Pishva, Z Ibrahim, M Sattlecker, ...",
+    "year": "2020",
+    "publication": "Neurobiology of Aging 95, 26-45, 2020",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&citation_for_view=Fka9HMAAAAAJ:GnPB-g6toBAC",
+    "citation_id": "Fka9HMAAAAAJ:GnPB-g6toBAC"
+  },
+  {
+    "title": "How data science can advance mental health research",
+    "authors": "TC Russ, E Woelbert, KAS Davis, JD Hafferty, Z Ibrahim, B Inkster, A John, ...",
+    "year": "2019",
+    "publication": "Nature human behaviour 3 (1), 24-32, 2019",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&citation_for_view=Fka9HMAAAAAJ:HDshCWvjkbEC",
+    "citation_id": "Fka9HMAAAAAJ:HDshCWvjkbEC"
+  },
+  {
+    "title": "Discharge summary hospital course summarisation of in patient electronic health record text with clinical concept guided deep pre-trained transformer models",
+    "authors": "T Searle, Z Ibrahim, J Teo, RJB Dobson",
+    "year": "2023",
+    "publication": "Journal of Biomedical Informatics 141, 104358, 2023",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&citation_for_view=Fka9HMAAAAAJ:cFHS6HbyZ2cC",
+    "citation_id": "Fka9HMAAAAAJ:cFHS6HbyZ2cC"
+  },
+  {
+    "title": "Tsi-bench: Benchmarking time series imputation",
+    "authors": "W Du, J Wang, L Qian, Y Yang, Z Ibrahim, F Liu, Z Wang, H Liu, Z Zhao, ...",
+    "year": "2024",
+    "publication": "arXiv preprint arXiv:2406.12747, 2024",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&citation_for_view=Fka9HMAAAAAJ:P5F9QuxV20EC",
+    "citation_id": "Fka9HMAAAAAJ:P5F9QuxV20EC"
+  },
+  {
+    "title": "GEOexplorer: a webserver for gene expression analysis and visualisation",
+    "authors": "GP Hunt, L Grassi, R Henkin, F Smeraldi, TP Spargo, R Kabiljo, S Koks, ...",
+    "year": "2022",
+    "publication": "Nucleic Acids Research 50 (W1), W367-W374, 2022",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&citation_for_view=Fka9HMAAAAAJ:SeFeTyx0c_EC",
+    "citation_id": "Fka9HMAAAAAJ:SeFeTyx0c_EC"
+  },
+  {
+    "title": "ADEPt, a semantically-enriched pipeline for extracting adverse drug events from free-text electronic health records",
+    "authors": "E Iqbal, R Mallah, D Rhodes, H Wu, A Romero, N Chang, O Dzahini, ...",
+    "year": "2017",
+    "publication": "PloS one 12 (11), e0187121, 2017",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&citation_for_view=Fka9HMAAAAAJ:ZeXyd9-uunAC",
+    "citation_id": "Fka9HMAAAAAJ:ZeXyd9-uunAC"
+  },
+  {
+    "title": "Experimental evaluation and development of a silver-standard for the MIMIC-III clinical coding dataset",
+    "authors": "T Searle, Z Ibrahim, R Dobson",
+    "year": "2020",
+    "publication": "Proceedings of the 19th SIGBioMed Workshop on Biomedical Language Processing …, 2020",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&citation_for_view=Fka9HMAAAAAJ:BqipwSGYUEgC",
+    "citation_id": "Fka9HMAAAAAJ:BqipwSGYUEgC"
+  },
+  {
+    "title": "Improving RNN with attention and embedding for adverse drug reactions",
+    "authors": "C Pandey, Z Ibrahim, H Wu, E Iqbal, R Dobson",
+    "year": "2017",
+    "publication": "Proceedings of the 2017 international conference on digital health, 67-71, 2017",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&citation_for_view=Fka9HMAAAAAJ:dhFuZR0502QC",
+    "citation_id": "Fka9HMAAAAAJ:dhFuZR0502QC"
+  },
+  {
+    "title": "A knowledge distillation ensemble framework for predicting short-and long-term hospitalization outcomes from electronic health records data",
+    "authors": "ZM Ibrahim, D Bean, T Searle, L Qian, H Wu, A Shek, Z Kraljevic, ...",
+    "year": "2021",
+    "publication": "IEEE Journal of Biomedical and Health Informatics 26 (1), 423-435, 2021",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&citation_for_view=Fka9HMAAAAAJ:NaGl4SEjCO4C",
+    "citation_id": "Fka9HMAAAAAJ:NaGl4SEjCO4C"
+  },
+  {
+    "title": "Estimating redundancy in clinical text",
+    "authors": "T Searle, Z Ibrahim, J Teo, R Dobson",
+    "year": "2021",
+    "publication": "Journal of biomedical informatics 124, 103938, 2021",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&citation_for_view=Fka9HMAAAAAJ:vV6vV6tmYwMC",
+    "citation_id": "Fka9HMAAAAAJ:vV6vV6tmYwMC"
+  },
+  {
+    "title": "A multi-agent platform for automating the collection of patient-provided clinical feedback",
+    "authors": "ZM Ibrahim, L Fernández de la Cruz, A Stringaris, R Goodman, M Luck, ...",
+    "year": "2015",
+    "publication": "proceedings of the 2015 international conference on autonomous agents and …, 2015",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&citation_for_view=Fka9HMAAAAAJ:KlAtU1dfN6UC",
+    "citation_id": "Fka9HMAAAAAJ:KlAtU1dfN6UC"
+  },
+  {
+    "title": "What can we learn from 68 000 clinical frailty scale scores? Evaluating the utility of frailty assessment in emergency departments",
+    "authors": "HL Ellis, L Dunnell, R Eyres, J Whitney, C Jennings, D Wilson, J Tippett, ...",
+    "year": "2025",
+    "publication": "Age and Ageing 54 (4), afaf093, 2025",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&citation_for_view=Fka9HMAAAAAJ:uWQEDVKXjbEC",
+    "citation_id": "Fka9HMAAAAAJ:uWQEDVKXjbEC"
+  },
+  {
+    "title": "The early warning paradox",
+    "authors": "H Logan Ellis, E Palmer, JT Teo, M Whyte, K Rockwood, Z Ibrahim",
+    "year": "2025",
+    "publication": "npj Digital Medicine 8 (1), 81, 2025",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=20&citation_for_view=Fka9HMAAAAAJ:SP6oXDckpogC",
+    "citation_id": "Fka9HMAAAAAJ:SP6oXDckpogC"
+  },
+  {
+    "title": "Spatio-temporal reasoning for vague regions",
+    "authors": "ZM Ibrahim, AY Tawfik",
+    "year": "2004",
+    "publication": "Conference of the Canadian society for computational studies of intelligence …, 2004",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=20&citation_for_view=Fka9HMAAAAAJ:u5HHmVD_uO8C",
+    "citation_id": "Fka9HMAAAAAJ:u5HHmVD_uO8C"
+  },
+  {
+    "title": "How deep is your guess? a fresh perspective on deep learning for medical time-series imputation",
+    "authors": "L Qian, HL Ellis, T Wang, J Wang, R Mitra, R Dobson, Z Ibrahim",
+    "year": "2025",
+    "publication": "IEEE Journal of Biomedical and Health Informatics, 2025",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=20&citation_for_view=Fka9HMAAAAAJ:KxtntwgDAa4C",
+    "citation_id": "Fka9HMAAAAAJ:KxtntwgDAa4C"
+  },
+  {
+    "title": "Exploring multimodal large language models for radiology report error-checking",
+    "authors": "J Wu, Y Kim, EC Keller, J Chow, AP Levine, N Pontikos, Z Ibrahim, ...",
+    "year": "2023",
+    "publication": "arXiv preprint arXiv:2312.13103, 2023",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=20&citation_for_view=Fka9HMAAAAAJ:_xSYboBqXhAC",
+    "citation_id": "Fka9HMAAAAAJ:_xSYboBqXhAC"
+  },
+  {
+    "title": "Moving from development to implementation of digital innovations within the NHS: myHealthE, a remote monitoring system for tracking patient outcomes in child and adolescent …",
+    "authors": "AC Morris, Z Ibrahim, OS Moghraby, A Stringaris, IM Grant, L Zalewski, ...",
+    "year": "2023",
+    "publication": "Digital Health 9, 20552076231211551, 2023",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=20&citation_for_view=Fka9HMAAAAAJ:2P1L_qKh6hAC",
+    "citation_id": "Fka9HMAAAAAJ:2P1L_qKh6hAC"
+  },
+  {
+    "title": "Efficient reuse of natural language processing models for phenotype-mention identification in free-text electronic medical records: a phenotype embedding approach",
+    "authors": "H Wu, K Hodgson, S Dyson, KI Morley, ZM Ibrahim, E Iqbal, R Stewart, ...",
+    "year": "2019",
+    "publication": "JMIR Medical Informatics 7 (4), e14782, 2019",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=20&citation_for_view=Fka9HMAAAAAJ:isC4tDSrTZIC",
+    "citation_id": "Fka9HMAAAAAJ:isC4tDSrTZIC"
+  },
+  {
+    "title": "Ensemble learning for poor prognosis predictions: A case study on SARS-CoV-2",
+    "authors": "H Wu, H Zhang, A Karwath, Z Ibrahim, T Shi, X Zhang, K Wang, J Sun, ...",
+    "year": "2021",
+    "publication": "Journal of the American Medical Informatics Association 28 (4), 791-800, 2021",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=20&citation_for_view=Fka9HMAAAAAJ:ns9cj8rnVeAC",
+    "citation_id": "Fka9HMAAAAAJ:ns9cj8rnVeAC"
+  },
+  {
+    "title": "Using qualitative probability in reverse-engineering gene regulatory networks",
+    "authors": "Z Ibrahim, A Ngom, AY Tawfik",
+    "year": "2010",
+    "publication": "IEEE/ACM Transactions on Computational Biology and Bioinformatics 8 (2), 326-334, 2010",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=20&citation_for_view=Fka9HMAAAAAJ:d1gkVwhDpl0C",
+    "citation_id": "Fka9HMAAAAAJ:d1gkVwhDpl0C"
+  },
+  {
+    "title": "Modular Deep Learning for Multivariate Time-Series: Decoupling Imputation and Downstream Tasks",
+    "authors": "JA Raj, L Qian, Z Ibrahim",
+    "year": "2024",
+    "publication": "arXiv preprint arXiv:2411.03941, 2024",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=20&citation_for_view=Fka9HMAAAAAJ:UxriW0iASnsC",
+    "citation_id": "Fka9HMAAAAAJ:UxriW0iASnsC"
+  },
+  {
+    "title": "Unveiling the secrets: How masking strategies shape time series imputation",
+    "authors": "L Qian, Z Ibrahim, W Du, Y Yang, RJ Dobson",
+    "year": "2024",
+    "publication": "arXiv preprint arXiv:2405.17508, 2024",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=20&citation_for_view=Fka9HMAAAAAJ:CHSYGLWDkRkC",
+    "citation_id": "Fka9HMAAAAAJ:CHSYGLWDkRkC"
+  },
+  {
+    "title": "Assessing the feasibility of a web‐based outcome measurement system in child and adolescent mental health services–myHealthE a randomised controlled feasibility pilot study",
+    "authors": "AC Morris, Z Ibrahim, M Heslin, OS Moghraby, A Stringaris, IM Grant, ...",
+    "year": "2023",
+    "publication": "Child and Adolescent Mental Health 28 (1), 128-147, 2023",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=20&citation_for_view=Fka9HMAAAAAJ:pqnbT2bcN3wC",
+    "citation_id": "Fka9HMAAAAAJ:pqnbT2bcN3wC"
+  },
+  {
+    "title": "The feasibility of a strategy for the remote recruitment, consenting and assessment of recent referrals: a protocol for phase 1 of the On-Line Parent Training for the Initial …",
+    "authors": "K Kostyrka-Allchorne, C Ballard, S Byford, S Cortese, D Daley, J Downs, ...",
+    "year": "2022",
+    "publication": "Pilot and feasibility studies 8 (1), 1, 2022",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=20&citation_for_view=Fka9HMAAAAAJ:ldfaerwXgEUC",
+    "citation_id": "Fka9HMAAAAAJ:ldfaerwXgEUC"
+  },
+  {
+    "title": "Qualitative motif detection in gene regulatory networks",
+    "authors": "ZM Ibrahim, AY Tawfik, A Ngom",
+    "year": "2009",
+    "publication": "2009 IEEE International Conference on Bioinformatics and Biomedicine, 124-129, 2009",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=20&citation_for_view=Fka9HMAAAAAJ:u-x6o8ySG0sC",
+    "citation_id": "Fka9HMAAAAAJ:u-x6o8ySG0sC"
+  },
+  {
+    "title": "An abstract theory and ontology of motion based on the regions connection calculus",
+    "authors": "ZM Ibrahim, AY Tawfik",
+    "year": "2007",
+    "publication": "International Symposium on Abstraction, Reformulation, and Approximation …, 2007",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=20&citation_for_view=Fka9HMAAAAAJ:9yKSN-GCB0IC",
+    "citation_id": "Fka9HMAAAAAJ:9yKSN-GCB0IC"
+  },
+  {
+    "title": "Uncertainty-aware deep attention recurrent neural network for heterogeneous time series imputation",
+    "authors": "L Qian, Z Ibrahim, R Dobson",
+    "year": "2024",
+    "publication": "arXiv preprint arXiv:2401.02258, 2024",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=20&citation_for_view=Fka9HMAAAAAJ:b0M2c_1WBrUC",
+    "citation_id": "Fka9HMAAAAAJ:b0M2c_1WBrUC"
+  },
+  {
+    "title": "SemEHR: surfacing semantic data from clinical notes in electronic health records for tailored care, trial recruitment, and clinical research",
+    "authors": "H Wu, G Toti, KI Morley, Z Ibrahim, A Folarin, I Kartoglu, R Jackson, ...",
+    "year": "2017",
+    "publication": "The Lancet 390, S97, 2017",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=20&citation_for_view=Fka9HMAAAAAJ:IWHjjKOFINEC",
+    "citation_id": "Fka9HMAAAAAJ:IWHjjKOFINEC"
+  },
+  {
+    "title": "A qualitative Hidden Markov Model for spatio-temporal reasoning",
+    "authors": "ZM Ibrahim, AY Tawfik, A Ngom",
+    "year": "2007",
+    "publication": "European Conference on Symbolic and Quantitative Approaches to Reasoning and …, 2007",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=20&citation_for_view=Fka9HMAAAAAJ:2osOgNQ5qMEC",
+    "citation_id": "Fka9HMAAAAAJ:2osOgNQ5qMEC"
+  },
+  {
+    "title": "The relative vertex clustering value-a new criterion for the fast discovery of functional modules in protein interaction networks",
+    "authors": "ZM Ibrahim, A Ngom",
+    "year": "2015",
+    "publication": "BMC bioinformatics 16 (Suppl 4), S3, 2015",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=20&citation_for_view=Fka9HMAAAAAJ:8k81kl-MbHgC",
+    "citation_id": "Fka9HMAAAAAJ:8k81kl-MbHgC"
+  },
+  {
+    "title": "Joint Entity and Relation Extraction in Medical Text.",
+    "authors": "LX Zhang, A Roberts, SS Zeki, ZM Ibrahim, H Wu, N Wiratunga",
+    "year": "2023",
+    "publication": "KDH@ IJCAI, 2023",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=20&citation_for_view=Fka9HMAAAAAJ:f2IySw72cVMC",
+    "citation_id": "Fka9HMAAAAAJ:f2IySw72cVMC"
+  },
+  {
+    "title": "Modeling Rare Interactions in Time Series Data Through Qualitative Change: Application to Outcome Prediction in Intensive Care Units",
+    "authors": "Z Ibrahim, H Wu, R Dobson",
+    "year": "2020",
+    "publication": "arXiv preprint arXiv:2004.01431, 2020",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=20&citation_for_view=Fka9HMAAAAAJ:blknAaTinKkC",
+    "citation_id": "Fka9HMAAAAAJ:blknAaTinKkC"
+  },
+  {
+    "title": "Detecting epistasis in the presence of linkage disequilibrium: A focused comparison",
+    "authors": "ZM Ibrahim, S Newhouse, R Dobson",
+    "year": "2013",
+    "publication": "2013 IEEE Symposium on Computational Intelligence in Bioinformatics and …, 2013",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=40&citation_for_view=Fka9HMAAAAAJ:UebtZRa9Y70C",
+    "citation_id": "Fka9HMAAAAAJ:UebtZRa9Y70C"
+  },
+  {
+    "title": "Surprise-Based Qualitative Probabilistic Networks",
+    "authors": "ZM Ibrahim, AY Tawfik, A Ngom",
+    "year": "2009",
+    "publication": "European Conference on Symbolic and Quantitative Approaches to Reasoning and …, 2009",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=40&citation_for_view=Fka9HMAAAAAJ:qjMakFHDy7sC",
+    "citation_id": "Fka9HMAAAAAJ:qjMakFHDy7sC"
+  },
+  {
+    "title": "CSAI: Conditional Self-Attention Imputation for Healthcare Time-series",
+    "authors": "L Qian, JA Raj, H Logan-Ellis, A Zhang, Y Zhang, T Wang, RJB Dobson, ...",
+    "year": "2025",
+    "publication": "IEEE Journal of Biomedical and Health Informatics, 2025",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=40&citation_for_view=Fka9HMAAAAAJ:Tiz5es2fbqcC",
+    "citation_id": "Fka9HMAAAAAJ:Tiz5es2fbqcC"
+  },
+  {
+    "title": "Methods and Applications for Summarising Free-Text Narratives in Electronic Health Records",
+    "authors": "T Searle, Z Ibrahim",
+    "year": "2023",
+    "publication": "Doctoral dissertation, 2023",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=40&citation_for_view=Fka9HMAAAAAJ:abG-DnoFyZgC",
+    "citation_id": "Fka9HMAAAAAJ:abG-DnoFyZgC"
+  },
+  {
+    "title": "Addressing class imbalance in electronic health records data imputation",
+    "authors": "L Qian, Z Ibrahim, A Zhang, RJB Dobson",
+    "year": "2023",
+    "publication": "CEUR Workshop Proceedings 3479, 2023",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=40&citation_for_view=Fka9HMAAAAAJ:pyW8ca7W8N0C",
+    "citation_id": "Fka9HMAAAAAJ:pyW8ca7W8N0C"
+  },
+  {
+    "title": "Summarisation of electronic health records with clinical concept guidance",
+    "authors": "T Searle, Z Ibrahim, J Teo, R Dobson",
+    "year": "2022",
+    "publication": null,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=40&citation_for_view=Fka9HMAAAAAJ:4OULZ7Gr8RgC",
+    "citation_id": "Fka9HMAAAAAJ:4OULZ7Gr8RgC"
+  },
+  {
+    "title": "Evaluating physical urban features in several mental illnesses using electronic health record data",
+    "authors": "Z Mahabadi, M Mahabadi, S Velupillai, A Roberts, P McGuire, Z Ibrahim, ...",
+    "year": "2022",
+    "publication": "Frontiers in digital health 4, 874237, 2022",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=40&citation_for_view=Fka9HMAAAAAJ:3s1wT3WcHBgC",
+    "citation_id": "Fka9HMAAAAAJ:3s1wT3WcHBgC"
+  },
+  {
+    "title": "Identifying physical health comorbidities in a cohort of individuals with severe mental illness: an application of SemEHR",
+    "authors": "R Bendayan, H Wu, Z Kraljevic, R Stewart, T Searle, J Chaturvedi, ...",
+    "year": "2020",
+    "publication": "arXiv preprint arXiv:2002.08901, 2020",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=40&citation_for_view=Fka9HMAAAAAJ:JV2RwH3_ST0C",
+    "citation_id": "Fka9HMAAAAAJ:JV2RwH3_ST0C"
+  },
+  {
+    "title": "Contextualised concept embedding for efficiently adapting natural language processing models for phenotype identification",
+    "authors": "H Wu, K Hodgson, S Dyson, KI Morley, ZM Ibrahim, E Iqbal, R Stewart, ...",
+    "year": "2019",
+    "publication": "arxiv. org, 2019",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=40&citation_for_view=Fka9HMAAAAAJ:4JMBOYKVnBMC",
+    "citation_id": "Fka9HMAAAAAJ:4JMBOYKVnBMC"
+  },
+  {
+    "title": "Learning Patient Similarity Using Joint Distributed Embeddings of Treatment and Diagnoses",
+    "authors": "C Ormandy, ZM Ibrahim, RJB Dobson",
+    "year": "2017",
+    "publication": "KDH@IJCAI 1891, 30-35, 2017",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=40&citation_for_view=Fka9HMAAAAAJ:7PzlFSSx8tAC",
+    "citation_id": "Fka9HMAAAAAJ:7PzlFSSx8tAC"
+  },
+  {
+    "title": "A dynamic qualitative probabilistic network approach for extracting gene regulatory network motifs",
+    "authors": "ZM Ibrahim, A Ngom, AY Tawfik",
+    "year": "2010",
+    "publication": "2010 IEEE International Conference on Bioinformatics and Biomedicine (BIBM …, 2010",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=40&citation_for_view=Fka9HMAAAAAJ:zYLM7Y9cAGgC",
+    "citation_id": "Fka9HMAAAAAJ:zYLM7Y9cAGgC"
+  },
+  {
+    "title": "A Surprise-Based Qualitative Probability Calculus II.",
+    "authors": "ZM Ibrahim, AY Tawfik, A Ngom",
+    "year": "2010",
+    "publication": "FLAIRS, 2010",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=40&citation_for_view=Fka9HMAAAAAJ:IjCSPb-OGe4C",
+    "citation_id": "Fka9HMAAAAAJ:IjCSPb-OGe4C"
+  },
+  {
+    "title": "Qualitative Hidden Markov Models for Classifying Gene Expression Data",
+    "authors": "ZM Ibrahim, AY Tawfik, A Ngom",
+    "year": "2008",
+    "publication": "International Conference on Innovative Techniques and Applications of …, 2008",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=40&citation_for_view=Fka9HMAAAAAJ:W7OEmFMy1HYC",
+    "citation_id": "Fka9HMAAAAAJ:W7OEmFMy1HYC"
+  },
+  {
+    "title": "A qualitative spatio-temporal abstraction of a disaster space",
+    "authors": "ZM Ibrahim, AY Tawfik",
+    "year": "2005",
+    "publication": "International Symposium on Abstraction, Reformulation, and Approximation …, 2005",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=40&citation_for_view=Fka9HMAAAAAJ:Tyk-4Ss8FVUC",
+    "citation_id": "Fka9HMAAAAAJ:Tyk-4Ss8FVUC"
+  },
+  {
+    "title": "Can laboratory test-based frailty indices contribute to frailty screening in emergency departments?",
+    "authors": "H Logan Ellis, L Dunnell, J Whitney, C Jennings, D Wilson, J Tippett, ...",
+    "year": "2025",
+    "publication": "Age and Ageing 54 (7), afaf192, 2025",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=40&citation_for_view=Fka9HMAAAAAJ:XiSMed-E-HIC",
+    "citation_id": "Fka9HMAAAAAJ:XiSMed-E-HIC"
+  },
+  {
+    "title": "Multi-modal Latent-Space Self-alignment for Super-Resolution Cardiac MR Segmentation",
+    "authors": "Y Deng, Y Wen, L Qian, E Puyol Anton, H Xu, K Pushparajah, Z Ibrahim, ...",
+    "year": "2022",
+    "publication": "International Workshop on Statistical Atlases and Computational Models of …, 2022",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=40&citation_for_view=Fka9HMAAAAAJ:dfsIfKJdRG4C",
+    "citation_id": "Fka9HMAAAAAJ:dfsIfKJdRG4C"
+  },
+  {
+    "title": "Learning to self-manage by intelligent monitoring, prediction and intervention",
+    "authors": "N Wiratunga",
+    "year": "2019",
+    "publication": null,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=40&citation_for_view=Fka9HMAAAAAJ:iH-uZ7U-co4C",
+    "citation_id": "Fka9HMAAAAAJ:iH-uZ7U-co4C"
+  },
+  {
+    "title": "Preface: The 2nd International Workshop on Knowledge Discovery in Healthcare Data (KDH)",
+    "authors": "Z Ibrahim, H Wu, K Bach, R Dobson, S Denaxas, N Wiratunga, S Massie, ...",
+    "year": "2017",
+    "publication": "CEUR Workshop Proceedings 1891, 3-4, 2017",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=40&citation_for_view=Fka9HMAAAAAJ:RHpTSmoSYBkC",
+    "citation_id": "Fka9HMAAAAAJ:RHpTSmoSYBkC"
+  },
+  {
+    "title": "Encoding medication episodes for adverse drug event prediction",
+    "authors": "H Wu, ZM Ibrahim, E Iqbal, RJB Dobson",
+    "year": "2016",
+    "publication": "International Conference on Innovative Techniques and Applications of …, 2016",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=40&citation_for_view=Fka9HMAAAAAJ:qxL8FJ1GzNcC",
+    "citation_id": "Fka9HMAAAAAJ:qxL8FJ1GzNcC"
+  },
+  {
+    "title": "Predicting Adverse Events from Multiple and Dynamic Medication Episodes–a preliminary result in a large mental health registry",
+    "authors": "H Wu, Z Ibrahim, E Iqbal, RJB Dobson",
+    "year": "2016",
+    "publication": "IJCAI 2016-Workshop on Knowledge Discovery in Healthcare Data, 2016",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=40&citation_for_view=Fka9HMAAAAAJ:YOwf2qJgpHMC",
+    "citation_id": "Fka9HMAAAAAJ:YOwf2qJgpHMC"
+  },
+  {
+    "title": "Towards Using Rule-Based Multi-agent System for the Early Detection of Adverse Drug Reactions.",
+    "authors": "ZM Ibrahim, R Mallah, RJB Dobson",
+    "year": "2014",
+    "publication": "FLAIRS, 2014",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=60&citation_for_view=Fka9HMAAAAAJ:0EnyYjriUFMC",
+    "citation_id": "Fka9HMAAAAAJ:0EnyYjriUFMC"
+  },
+  {
+    "title": "Characteristics and Early Diagnosis of Motor Neuron Disease (MND) in 67 million individuals in England: a comparative study on phenotyping models derived by AI, Knowledge …",
+    "authors": "Y Abdulle, J Wu, S Budhdeo, Y Kim, J Shen, E Sun, W Ali, C Dai, ...",
+    "year": "2025",
+    "publication": "medRxiv, 2025.07. 01.25330428, 2025",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=60&citation_for_view=Fka9HMAAAAAJ:u9iWguZQMMsC",
+    "citation_id": "Fka9HMAAAAAJ:u9iWguZQMMsC"
+  },
+  {
+    "title": "METHOD: Modular Efficient Transformer for Health Outcome Discovery",
+    "authors": "L Qian, Z Ibrahim",
+    "year": "2025",
+    "publication": "arXiv preprint arXiv:2505.17054, 2025",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=60&citation_for_view=Fka9HMAAAAAJ:p2g8aNsByqUC",
+    "citation_id": "Fka9HMAAAAAJ:p2g8aNsByqUC"
+  },
+  {
+    "title": "What Clinicians Want AI to Measure, and How They Want It Done",
+    "authors": "HL Ellis, L Alabdallat, E Futrell, L Qian, P Renc, J Teo, Z Ibrahim, ...",
+    "year": "2025",
+    "publication": null,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=60&citation_for_view=Fka9HMAAAAAJ:OU6Ihb5iCvQC",
+    "citation_id": "Fka9HMAAAAAJ:OU6Ihb5iCvQC"
+  },
+  {
+    "title": "Model Complexity and Explainability in Prediction for Coronary Artery Disease in the UK Biobank",
+    "authors": "N Sharapova, JM Maxwell, SP Hagenaars, RA Russell, ZM Ibrahim, ...",
+    "year": "2022",
+    "publication": "GENETIC EPIDEMIOLOGY 46 (7), 531-531, 2022",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=60&citation_for_view=Fka9HMAAAAAJ:u_35RYKgDlwC",
+    "citation_id": "Fka9HMAAAAAJ:u_35RYKgDlwC"
+  },
+  {
+    "title": "Added value of biomarkers and polygenic risk scores as risk factors for coronary artery disease",
+    "authors": "N Sharapova, JM Maxwell, K Glanville, SP Hagenaars, R Russell, ...",
+    "year": "2020",
+    "publication": "GENETIC EPIDEMIOLOGY 44 (5), 516-516, 2020",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=60&citation_for_view=Fka9HMAAAAAJ:O3NaXMp0MMsC",
+    "citation_id": "Fka9HMAAAAAJ:O3NaXMp0MMsC"
+  },
+  {
+    "title": "Ensemble learning for poor prognosis predictions",
+    "authors": "H Wu, H Zhang, A Karwath, Z Ibrahim, T Shi, X Zhang, K Wang, J Sun, ...",
+    "year": "2020",
+    "publication": null,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=60&citation_for_view=Fka9HMAAAAAJ:HoB7MX3m0LUC",
+    "citation_id": "Fka9HMAAAAAJ:HoB7MX3m0LUC"
+  },
+  {
+    "title": "Learning to self-manage by intelligent monitoring, prediction and intervention.",
+    "authors": "K COOPER, Z IBRAHIM, O CELIKTUTAN, RJ DOBSON, S MCKENNA, ...",
+    "year": "2019",
+    "publication": null,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=60&citation_for_view=Fka9HMAAAAAJ:hMod-77fHWUC",
+    "citation_id": "Fka9HMAAAAAJ:hMod-77fHWUC"
+  },
+  {
+    "title": "A Rulebase for Detecting Adverse Drug Reactions from Unstructured Psychiatric Clinical Text",
+    "authors": "E Iqbal, ZM Ibrahim, H Wu, D Rhodes, RJB Dobson",
+    "year": "2017",
+    "publication": null,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=60&citation_for_view=Fka9HMAAAAAJ:M3ejUd6NZC8C",
+    "citation_id": "Fka9HMAAAAAJ:M3ejUd6NZC8C"
+  },
+  {
+    "title": "Category-Driven Association Rule Mining",
+    "authors": "ZM Ibrahim, H Wu, R Mallah, RJB Dobson",
+    "year": "2016",
+    "publication": "International Conference on Innovative Techniques and Applications of …, 2016",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=60&citation_for_view=Fka9HMAAAAAJ:aqlVkmm33-oC",
+    "citation_id": "Fka9HMAAAAAJ:aqlVkmm33-oC"
+  },
+  {
+    "title": "The Relative Vertex Clustering Value–A New Criterion for the Fast Discovery of Functional Modules in Protein Interaction Networks",
+    "authors": "A Ngom, Y Li, ZM Ibrahim",
+    "year": "2014",
+    "publication": "Pattern Recognition in Bioinformatics: 9th IAPR International Conference …, 2014",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=60&citation_for_view=Fka9HMAAAAAJ:5nxA0vEk-isC",
+    "citation_id": "Fka9HMAAAAAJ:5nxA0vEk-isC"
+  },
+  {
+    "title": "Gene Regulatory Network Identification with Qualitative Probabilistic Networks",
+    "authors": "ZM Ibrahim, A Ngom, AY Tawfik",
+    "year": "2013",
+    "publication": "Biological Knowledge Discovery Handbook, 281-306, 2013",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=60&citation_for_view=Fka9HMAAAAAJ:roLk4NBRz8UC",
+    "citation_id": "Fka9HMAAAAAJ:roLk4NBRz8UC"
+  },
+  {
+    "title": "Genome-wide association analysis identifies common variants associated with measures of disease progression in patients with Alzheimer's disease",
+    "authors": "S Newhouse, P Proitsi, M Sattlecker, K Lunnon, Z Ibrahim, C Johnston, ...",
+    "year": "2012",
+    "publication": "Alzheimer's Association International Conference 2012, 2012",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=60&citation_for_view=Fka9HMAAAAAJ:hqOjcs7Dif8C",
+    "citation_id": "Fka9HMAAAAAJ:hqOjcs7Dif8C"
+  },
+  {
+    "title": "Surprise: An Alternative Qualitative Uncertainty Model",
+    "authors": "Z Ibrahim",
+    "year": "2010",
+    "publication": "University of Windsor, 2010",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=60&citation_for_view=Fka9HMAAAAAJ:9ZlFYXVOiuMC",
+    "citation_id": "Fka9HMAAAAAJ:9ZlFYXVOiuMC"
+  },
+  {
+    "title": "A Surprise-based Qualitative Calculus.",
+    "authors": "ZM Ibrahim, AY Tawfik, A Ngom",
+    "year": "2009",
+    "publication": "FLAIRS, 2009",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=60&citation_for_view=Fka9HMAAAAAJ:_FxGoFyzp5QC",
+    "citation_id": "Fka9HMAAAAAJ:_FxGoFyzp5QC"
+  },
+  {
+    "title": "Representing Motion Uncertainty for Spatio-temporal Vague Regions",
+    "authors": "ZM Ibrahim, AY Tawfik",
+    "year": "2006",
+    "publication": "Workshop on Spatial and Temporal Reasoning, 27, 2006",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=60&citation_for_view=Fka9HMAAAAAJ:LkGwnXOMwfcC",
+    "citation_id": "Fka9HMAAAAAJ:LkGwnXOMwfcC"
+  },
+  {
+    "title": "Qualitative Spatio-temporal Representation and Reasoning for Vague Regions",
+    "authors": "ZM Ibrahim",
+    "year": "2004",
+    "publication": "University of Windsor, 2004",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=60&citation_for_view=Fka9HMAAAAAJ:ufrVoPGSRksC",
+    "citation_id": "Fka9HMAAAAAJ:ufrVoPGSRksC"
+  },
+  {
+    "title": "King’s Research Portal",
+    "authors": "Z Ibrahim, H Wu, A Hamoud, L Stappen, RJB Dobson, A Agarossi",
+    "year": "",
+    "publication": null,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=60&citation_for_view=Fka9HMAAAAAJ:dshw04ExmUIC",
+    "citation_id": "Fka9HMAAAAAJ:dshw04ExmUIC"
+  },
+  {
+    "title": "Data-drivenΤ",
+    "authors": "TC Russ, E Woelbert, KAS Davis, JD Hafferty, Z Ibrahim, B Inkster11, ...",
+    "year": "",
+    "publication": null,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=60&citation_for_view=Fka9HMAAAAAJ:fPk4N6BV_jEC",
+    "citation_id": "Fka9HMAAAAAJ:fPk4N6BV_jEC"
+  },
+  {
+    "title": "A Knowledge Distillation Framework for Predicting Short and Long-term Hospitalisation Outcomes from Electronic Health Records Data",
+    "authors": "ZM Ibrahim, D Bean, T Searle, H Wu, A Shek, Z Kraljevic, J Galloway, ...",
+    "year": "",
+    "publication": null,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=60&citation_for_view=Fka9HMAAAAAJ:J_g5lzvAfSwC",
+    "citation_id": "Fka9HMAAAAAJ:J_g5lzvAfSwC"
+  },
+  {
+    "title": "ARK Team Description: A Change-based Approach to Urban Rescue",
+    "authors": "AY Tawfik, Z Ibrahim, D Liang, R Price, L Qin, Z Wu",
+    "year": "",
+    "publication": null,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Fka9HMAAAAAJ&cstart=80&citation_for_view=Fka9HMAAAAAJ:YsMSGLbcyi4C",
+    "citation_id": "Fka9HMAAAAAJ:YsMSGLbcyi4C"
+  }
+]
