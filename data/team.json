@@ -59,10 +59,22 @@
     "image": "images/haoyu.jpg",
     "image_alt": "Haoyu Wang",
     "role_1": "Researcher",
-    "role_2": "",
+    "role_2": "Multimodal Clinial Data Analysis",
     "bio": "Haoyu's research focuses on reproducible benchmarks for multimodal clinical data analysis, particularly the time-aligned fusion of ICU time-series and clinical notes. He is currently developing TIMELY-Bench, a benchmark framework for evaluating fusion strategies across vital signs, lab results, medications, and clinical text in MIMIC-III/IV datasets. With a background in computer science and experience in deep learning for time-series forecasting, his broader interests include multimodal learning for healthcare and applying large language models to unstructured clinical reports.",
     "email": "haoyu.7.wang@kcl.ac.uk",
     "github": "https://github.com/haoyu-haoyu",
     "linkedin": "https://www.linkedin.com/in/haoyu-wang-abb052236/"
   }
+  {
+    "name": "Miss Zitong Li",
+    "image": "images/zitong.png",
+    "image_alt": "Zitong Li",
+    "role_1": "Researcher",
+    "role_2": "Trustworthy Clinial AI",
+    "bio": "Zitong's research focuses on trustworthy clinical AI, with a particular interest in large language models, sparse electronic health records, and ICU time-series. Her work combines MIMIC-IV clinical trajectories, missing-data imputation, forecasting, and evidence-grounded reasoning evaluation to study whether model outputs are clinically plausible, temporally grounded, and reliable. Her broader interests lie in clinically grounded medical foundation models, temporal reasoning over sparse EHR data, robust missing-data modelling, and the trustworthy evaluation of AI systems for real-world clinical decision support.",
+    "email": "zitong.2.li@kcl.ac.uk",
+    "github": "",
+    "linkedin": ""
+  }
 ]
+
