@@ -28,7 +28,7 @@
                 </div>
             </a>
 
-            <div class="nav-right-group">
+            <div id="primary-navigation" class="nav-right-group">
                 <ul class="nav-links">
                     <li><a href="#overview">Overview</a></li>
                     <li><a href="#framework">Framework</a></li>
@@ -41,7 +41,8 @@
                 </button>
             </div>
 
-            <button id="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
+            <button id="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false"
+                aria-controls="primary-navigation">
                 <i class="fa-solid fa-bars" aria-hidden="true"></i>
             </button>
         </nav>
@@ -97,7 +98,7 @@
             <div class="timely-content">
                 <h2>Privacy boundary</h2>
                 <p>TIMELY-Agent separates knowledge-facing work from patient-facing computation. Public clinical sources can support benchmark specification, while patient-level data remain within governed local infrastructure.</p>
-                <div class="privacy-boundary" aria-label="Reviewed specifications move into governed local infrastructure while patient data remain local">
+                <div class="privacy-boundary" role="group" aria-label="Reviewed specifications move into governed local infrastructure while patient data remain local">
                     <div class="privacy-panel">
                         <h3>Knowledge-facing work</h3>
                         <p>Public clinical sources support reviewed benchmark specifications.</p>
@@ -126,7 +127,7 @@
             <div class="timely-content timely-contact">
                 <h2>Get in touch</h2>
                 <p>Interested in trustworthy clinical agents, temporal reasoning or multimodal benchmark design? Contact the MAI Research Group.</p>
-                <a href="mailto:zina.ibrahim@kcl.ac.uk" class="hero-button">Email the research group</a>
+                <a href="mailto:zina.ibrahim@kcl.ac.uk" class="project-link">Email the research group</a>
                 <p class="timely-resource-note">Publications and project resources will be linked here when available.</p>
             </div>
         </section>

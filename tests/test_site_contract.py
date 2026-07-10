@@ -375,6 +375,39 @@ class PublicSiteContractTests(unittest.TestCase):
             "timely-agent.html must contain the exact approved resource note",
         )
 
+        navigation_groups = [
+            attributes
+            for tag, attributes in parser.attributes
+            if tag == "div"
+            and "nav-right-group" in attributes.get("class", "").split()
+        ]
+        self.assertEqual(len(navigation_groups), 1)
+        with self.subTest(accessibility_hook="navigation id"):
+            self.assertEqual(navigation_groups[0].get("id"), "primary-navigation")
+
+        mobile_toggles = [
+            attributes
+            for tag, attributes in parser.attributes
+            if tag == "button" and attributes.get("id") == "mobile-menu-toggle"
+        ]
+        self.assertEqual(len(mobile_toggles), 1)
+        with self.subTest(accessibility_hook="toggle aria-controls"):
+            self.assertEqual(
+                mobile_toggles[0].get("aria-controls"), "primary-navigation"
+            )
+
+        privacy_boundaries = [
+            attributes
+            for tag, attributes in parser.attributes
+            if tag == "div"
+            and "privacy-boundary" in attributes.get("class", "").split()
+        ]
+        self.assertEqual(len(privacy_boundaries), 1)
+        with self.subTest(accessibility_hook="privacy group role"):
+            self.assertEqual(privacy_boundaries[0].get("role"), "group")
+        with self.subTest(accessibility_hook="privacy group label"):
+            self.assertTrue(privacy_boundaries[0].get("aria-label", "").strip())
+
     def test_timely_svg_is_sanitized_and_uses_approved_labels(self):
         svg_path = "images/timely-agent-overview.svg"
         self.assert_file_exists(svg_path)
@@ -533,7 +566,8 @@ class PublicSiteContractTests(unittest.TestCase):
             any("mobile-nav-open" in opening for opening in decoy_openings)
         )
 
-        openings = css_rule_openings(read("style.css"))
+        css = strip_comments(read("style.css"), line_comments=False)
+        openings = css_rule_openings(css)
         required_patterns = (
             r"^@media\b[^{}]*\(\s*max-width\s*:\s*768px\s*\)$",
             r"(?:^|,)\s*\.timely-workflow-grid\b",
@@ -544,6 +578,44 @@ class PublicSiteContractTests(unittest.TestCase):
                 self.assertTrue(
                     any(re.search(pattern, opening) for opening in openings),
                     f"style.css must contain rule opening matching {pattern!r}",
+                )
+
+        contact_button_rule = re.search(
+            r"\.timely-contact\s+\.project-link\s*\{(?P<body>[^{}]*)\}",
+            css,
+            flags=re.DOTALL,
+        )
+        with self.subTest(css_rule="TIMELY contact button"):
+            self.assertIsNotNone(
+                contact_button_rule,
+                "TIMELY contact button must have an uncommented scoped CSS rule",
+            )
+        if contact_button_rule is not None:
+            contact_button_body = contact_button_rule.group("body")
+            self.assertRegex(
+                contact_button_body,
+                r"background-color\s*:\s*var\(\s*--primary-color\s*\)",
+            )
+            self.assertRegex(
+                contact_button_body,
+                r"color\s*:\s*var\(\s*--hero-text\s*\)",
+            )
+
+        script = javascript_without_comments(read("script.js"))
+        behavior_patterns = (
+            r"firstNavLink\.focus\s*\(\s*\)",
+            r"addEventListener\s*\(\s*['\"]keydown['\"]",
+            r"\.key\s*===\s*['\"]Escape['\"]",
+            r"mobileMenuToggle\.focus\s*\(\s*\)",
+            r"function\s+handleViewportResize\s*\(",
+            r"addEventListener\s*\(\s*['\"]resize['\"]\s*,\s*handleViewportResize",
+            r"handleViewportResize[\s\S]*?innerWidth\s*>\s*768[\s\S]*?setMobileMenuState\s*\(\s*false\s*\)",
+        )
+        for pattern in behavior_patterns:
+            with self.subTest(script_pattern=pattern):
+                self.assertIsNotNone(
+                    re.search(pattern, script),
+                    f"script.js must contain active behavior matching {pattern!r}",
                 )
 
 

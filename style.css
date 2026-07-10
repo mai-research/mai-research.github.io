@@ -730,13 +730,18 @@ footer {
   font-size: 1.1rem;
 }
 
-.timely-contact .hero-button {
-  position: static;
-  transform: none;
+.timely-contact .project-link {
+  padding: 0.8rem 1.8rem;
+  background-color: var(--primary-color);
+  color: var(--hero-text);
+  border-radius: 50px;
+  font-family: var(--font-primary);
+  font-weight: 600;
   margin-top: 0.5rem;
 }
 
-.timely-contact .hero-button:hover {
+.timely-contact .project-link:hover {
+  color: var(--hero-text);
   transform: translateY(-2px);
 }
 
@@ -892,4 +897,3 @@ footer {
     transition-duration: 0.01ms !important;
   }
 }
-

@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainHeader = document.getElementById('main-header');
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    const firstNavLink = navLinks[0];
     const prefersReducedMotion = window.matchMedia
         && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -85,9 +86,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener('click', () => {
-            setMobileMenuState(!body.classList.contains('mobile-nav-open'));
+            const isOpen = !body.classList.contains('mobile-nav-open');
+            setMobileMenuState(isOpen);
+            if (isOpen && firstNavLink) {
+                firstNavLink.focus();
+            }
+        });
+
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && body.classList.contains('mobile-nav-open')) {
+                setMobileMenuState(false);
+                mobileMenuToggle.focus();
+            }
         });
     }
+
+    function handleViewportResize() {
+        if (window.innerWidth > 768 && body.classList.contains('mobile-nav-open')) {
+            setMobileMenuState(false);
+        }
+    }
+
+    window.addEventListener('resize', handleViewportResize);
 
     navLinks.forEach(link => {
         link.addEventListener('click', event => {
