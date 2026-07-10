@@ -16,7 +16,7 @@
     "image_alt": "Dr Qian",
     "role_1": "Postdoctoral Researcher",
     "role_2": "Expert in medical LLMs and deep learning.",
-    "bio": "Linglong's research bridges deep learning, symbolic reasoning, and medical data science, with a focus on the integration of temporal dynamics, multimodal signals, and clinical text. He is developing the foundational frameworks for health outcome forecasting, such as METHOD models, and contributes to open-source tools for time-series imputation and benchmarking.",
+    "bio": "Linglong's research bridges deep learning, symbolic reasoning, and medical data science, with a focus on temporal dynamics, multimodal signals, and clinical text. He is developing TIMELY-Agent, a framework for constructing auditable multimodal clinical reasoning benchmarks, and contributes to open-source tools for time-series imputation and benchmarking.",
     "email": "linglong.qian@kcl.ac.uk",
     "github": "https://github.com/LinglongQian",
     "linkedin": "https://linkedin.com/in/linglongqian"
