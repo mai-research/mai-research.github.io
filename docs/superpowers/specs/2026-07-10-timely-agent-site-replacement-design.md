@@ -109,7 +109,7 @@ There is no dedicated Status, Roadmap, Publications, Talks, Demo, or Open Source
 - Use the existing primary dark blue (`#005f73`) and accent teal (`#0a9396`) as the dominant colours.
 - Use white cards on the existing light grey page background.
 - Keep the hero visually related to the main site but simpler than the homepage background treatment.
-- Use an existing TIMELY-Agent architecture image as the project image. Copy it into the repository's `images/` directory during implementation and provide meaningful alt text.
+- Create a new, simplified MAI-style vector overview for the project card and detail page. It may show only the four public workflow labels: clinical knowledge, governed retrieval, reasoning episodes, and tasks and audit. It must not reproduce internal artefact names, model or tool choices, infrastructure names, standards commitments, export formats, results, or implementation status from the existing detailed TIMELY-Agent architecture image. Provide meaningful alt text.
 - Ensure cards stack cleanly on narrow screens and that text does not collapse into narrow columns.
 - Respect reduced-motion preferences for smooth-scrolling or decorative transitions added by the page.
 
@@ -126,6 +126,7 @@ The site remains plain static HTML, CSS, JavaScript, and JSON.
 - `method.html` becomes a lightweight legacy redirect to `timely-agent.html`, using a canonical link and a visible fallback link for environments where automatic redirection is unavailable.
 - `docs.html` and `people/zina.html` become lightweight redirects to the canonical homepage because they are obsolete duplicated snapshots that expose METHOD and contain broken relative asset paths.
 - METHOD images, PDFs, and talk files remain in place and are no longer linked by visible pages.
+- Retention means keeping historical filenames, binary assets, data records, and Git history in the repository. The deployed contents of `method.html`, `docs.html`, and `people/zina.html` are replaced by redirects, and no publicly addressable archive page is created.
 
 ## Failure Handling
 
