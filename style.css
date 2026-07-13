@@ -449,6 +449,10 @@ main section:last-of-type { padding-bottom: 6rem; }
     0 8px 20px rgba(11, 114, 133, 0.10);
 }
 
+.project-image--architecture {
+  height: 240px;
+}
+
 .project-body {
   flex: 1 1 auto;
   display: flex;

@@ -2,8 +2,9 @@
   {
     "title": "TIMELY-Agent",
     "text": "TIMELY-Agent is an agentic framework for building clinically grounded, auditable multimodal reasoning benchmarks from longitudinal electronic health records. It turns irregular patient timelines into compact, provenance-preserving reasoning episodes and supports evaluation of temporal grounding, cross-modal consistency, and evidence use. The framework separates public knowledge synthesis from governed local work with patient data, helping researchers inspect how benchmark tasks are specified, assembled, and audited.",
-    "image": "images/timely-agent-overview.svg",
-    "image_alt": "Four-stage TIMELY-Agent workflow from clinical knowledge to audited reasoning tasks",
+    "image": "images/timely-agent-public.png",
+    "image_class": "project-image--architecture",
+    "image_alt": "TIMELY-Agent architecture separating knowledge-facing agents from governed patient-facing local computation",
     "link": "timely-agent.html",
     "link_label": "Open Project",
     "title_link": "timely-agent.html"

@@ -1,3 +1,4 @@
+import hashlib
 import json
 import re
 import unittest
@@ -337,6 +338,110 @@ class PublicSiteContractTests(unittest.TestCase):
         self.assertTrue(visible_projects, "At least one project must be publicly visible")
         self.assertEqual(visible_projects[0].get("title"), "TIMELY-Agent")
         self.assertEqual(visible_projects[0].get("link"), "timely-agent.html")
+
+        timely_project = visible_projects[0]
+        with self.subTest(project_contract="TIMELY card image"):
+            self.assertEqual(
+                timely_project.get("image"),
+                "images/timely-agent-public.png",
+            )
+        with self.subTest(project_contract="TIMELY card image class"):
+            self.assertEqual(
+                timely_project.get("image_class"),
+                "project-image--architecture",
+            )
+        with self.subTest(project_contract="TIMELY card image alt text"):
+            self.assertEqual(
+                timely_project.get("image_alt"),
+                "TIMELY-Agent architecture separating knowledge-facing agents from "
+                "governed patient-facing local computation",
+            )
+        with self.subTest(project_contract="TIMELY card image asset"):
+            self.assert_file_exists("images/timely-agent-public.png")
+        with self.subTest(project_contract="raw TIMELY image excluded"):
+            self.assertFalse(
+                (ROOT / "images/timely-agent.png").exists(),
+                "The raw TIMELY image must not be present in the public repository",
+            )
+        public_image_path = ROOT / "images/timely-agent-public.png"
+        public_image_sha256 = (
+            hashlib.sha256(public_image_path.read_bytes()).hexdigest()
+            if public_image_path.is_file()
+            else None
+        )
+        with self.subTest(project_contract="public TIMELY image digest"):
+            self.assertEqual(
+                public_image_sha256,
+                "8d6a9bdf8b48cbf53134ec1eef2ec2878ef709ac00a6c47fb755405a2255b9a4",
+            )
+
+        css = strip_comments(read("style.css"), line_comments=False)
+        architecture_rules = re.findall(
+            r"(?<![\w-])\.project-image--architecture\s*\{(?P<body>[^{}]*)\}",
+            css,
+            flags=re.DOTALL,
+        )
+        with self.subTest(project_contract="architecture image CSS rule"):
+            self.assertEqual(
+                len(architecture_rules),
+                1,
+                "Define exactly one .project-image--architecture rule",
+            )
+        if architecture_rules:
+            architecture_heights = re.findall(
+                r"(?<![\w-])height\s*:\s*([^;{}]+)",
+                architecture_rules[0],
+            )
+            with self.subTest(project_contract="architecture image exact height"):
+                self.assertEqual(
+                    [value.strip() for value in architecture_heights],
+                    ["240px"],
+                )
+
+        base_image_rules = re.findall(
+            r"(?<![\w-])\.project-image\s*\{(?P<body>[^{}]*)\}",
+            css,
+            flags=re.DOTALL,
+        )
+        with self.subTest(project_contract="shared image CSS rule"):
+            self.assertEqual(len(base_image_rules), 1)
+        if base_image_rules:
+            object_fit_values = re.findall(
+                r"(?<![\w-])object-fit\s*:\s*([^;{}]+)",
+                base_image_rules[0],
+            )
+            with self.subTest(project_contract="shared image object fit"):
+                self.assertEqual(
+                    [value.strip() for value in object_fit_values],
+                    ["contain"],
+                )
+
+        project_scripts = [
+            javascript_without_comments(script)
+            for script in parse_html(read("index.html")).scripts
+            if "function loadProjects" in script
+        ]
+        with self.subTest(project_contract="single homepage project loader"):
+            self.assertEqual(len(project_scripts), 1)
+        if project_scripts:
+            project_script = project_scripts[0]
+            image_class_helper = (
+                r"function\s+projectImageClass\s*\(\s*project\s*=\s*\{\}\s*\)\s*\{"
+                r"\s*return\s+project\.image_class\s*===\s*"
+                r"'project-image--architecture'\s*\?\s*"
+                r"' project-image--architecture'\s*:\s*''\s*;\s*\}"
+            )
+            with self.subTest(project_contract="image class allowlist"):
+                self.assertRegex(project_script, image_class_helper)
+            with self.subTest(project_contract="base image class rendering"):
+                self.assertIn(
+                    'class="project-image${projectImageClass(project)}"',
+                    project_script,
+                )
+            with self.subTest(project_contract="lazy project image loading"):
+                self.assertIn('loading="lazy"', project_script)
+            with self.subTest(project_contract="async project image decoding"):
+                self.assertIn('decoding="async"', project_script)
 
         method_projects = [project for project in projects if project.get("title") == "METHOD"]
         self.assertEqual(len(method_projects), 1, "Retain exactly one historical METHOD record")
