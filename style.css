@@ -585,8 +585,8 @@ footer {
 }
 
 #timely-hero {
-  min-height: 680px;
-  padding: 9rem 5% 6rem;
+  min-height: 560px;
+  padding: 8rem 5% 5rem;
   display: flex;
   align-items: center;
   background-color: var(--primary-color);
@@ -596,10 +596,10 @@ footer {
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.9fr);
-  gap: 4rem;
-  align-items: center;
+}
+
+.timely-hero-content > div {
+  max-width: 850px;
 }
 
 .timely-hero-content h1 {
@@ -625,18 +625,6 @@ footer {
   line-height: 1.7;
   margin-bottom: 0;
   text-align: left;
-}
-
-.timely-hero-visual {
-  padding: 1.5rem;
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  box-shadow: 0 16px 40px rgba(var(--rgb-overlay-color), 0.16);
-}
-
-.timely-hero-visual img {
-  width: 100%;
 }
 
 .timely-content {
@@ -760,10 +748,6 @@ footer {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .timely-hero-content {
-    gap: 2.5rem;
-  }
-
   .timely-workflow-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -849,21 +833,12 @@ footer {
     padding: 8rem 6% 4.5rem;
   }
 
-  .timely-hero-content {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 2.5rem;
-  }
-
   .timely-hero-content h1 {
     font-size: 2.5rem;
   }
 
   .timely-hero-content .timely-lead {
     font-size: 1.05rem;
-  }
-
-  .timely-hero-visual {
-    padding: 1rem;
   }
 
   h2 {

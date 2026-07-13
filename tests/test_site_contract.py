@@ -369,6 +369,22 @@ class PublicSiteContractTests(unittest.TestCase):
                     f"timely-agent.html must contain id={section_id!r}",
                 )
 
+        hero_match = re.search(
+            r'<section\b[^>]*\bid=["\']timely-hero["\'][^>]*>(.*?)</section\s*>',
+            html,
+            flags=re.IGNORECASE | re.DOTALL,
+        )
+        self.assertIsNotNone(hero_match, "timely-agent.html must contain #timely-hero")
+        self.assertNotIn(
+            "timely-hero-visual",
+            html,
+            "timely-agent.html must not contain the TIMELY hero visual",
+        )
+        self.assertIsNone(
+            re.search(r"<img\b", hero_match.group(1), flags=re.IGNORECASE),
+            "#timely-hero must not contain an image",
+        )
+
         page_text = visible_text(html)
         for heading in parser.headings:
             with self.subTest(heading=heading):
