@@ -690,6 +690,7 @@ class PublicSiteContractTests(unittest.TestCase):
 
         script = javascript_without_comments(read("script.js"))
         behavior_patterns = (
+            r"navRightGroup\.addEventListener\s*\(\s*['\"]transitionend['\"]",
             r"firstNavLink\.focus\s*\(\s*\)",
             r"addEventListener\s*\(\s*['\"]keydown['\"]",
             r"\.key\s*===\s*['\"]Escape['\"]",

@@ -4,7 +4,7 @@
 
 This audit covers the public homepage, the TIMELY-Agent project page, project and team data, publication rendering, shared navigation, and the three legacy entry points (`method.html`, `docs.html`, and `people/zina.html`). The review combined source inspection, repository-wide content searches, local HTTP response checks for pages and assets, JSON and JavaScript validation, and the automated public-site contract suite.
 
-Live browser QA was completed against the local HTTP build at desktop and mobile widths. Both the homepage and TIMELY-Agent page rendered without broken images, console warnings, or horizontal overflow. The responsive menu opened and closed correctly, responded to Escape, and reset after returning to a desktop viewport. The browser inspection sandbox does not expose element `focus()` methods, so focus transitions were verified through the source contract rather than asserted from that isolated inspection context.
+Live browser QA was completed against the local HTTP build at desktop and mobile widths. Both the homepage and TIMELY-Agent page rendered without broken images, console warnings, or horizontal overflow. The responsive menu opened and closed correctly, moved focus to its first link after the reveal transition, responded to Escape by returning focus to the toggle, and reset after returning to a desktop viewport.
 
 ## Verified release behaviour
 

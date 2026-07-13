@@ -5,8 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentYearSpan = document.getElementById('current-year');
     const mainHeader = document.getElementById('main-header');
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const navRightGroup = document.querySelector('.nav-right-group');
     const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
     const firstNavLink = navLinks[0];
+    let pendingNavFocusHandler = null;
     const prefersReducedMotion = window.matchMedia
         && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -69,6 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function setMobileMenuState(isOpen) {
         body.classList.toggle('mobile-nav-open', isOpen);
+        if (!isOpen && navRightGroup && pendingNavFocusHandler) {
+            navRightGroup.removeEventListener('transitionend', pendingNavFocusHandler);
+            pendingNavFocusHandler = null;
+        }
         if (!mobileMenuToggle) return;
 
         mobileMenuToggle.setAttribute('aria-expanded', String(isOpen));
@@ -84,12 +90,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function focusFirstNavLinkAfterOpen() {
+        if (!firstNavLink) return;
+        if (!navRightGroup) {
+            firstNavLink.focus();
+            return;
+        }
+
+        pendingNavFocusHandler = () => {
+            pendingNavFocusHandler = null;
+            if (body.classList.contains('mobile-nav-open')) {
+                firstNavLink.focus();
+            }
+        };
+        navRightGroup.addEventListener('transitionend', pendingNavFocusHandler, { once: true });
+    }
+
     if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener('click', () => {
             const isOpen = !body.classList.contains('mobile-nav-open');
             setMobileMenuState(isOpen);
-            if (isOpen && firstNavLink) {
-                firstNavLink.focus();
+            if (isOpen) {
+                focusFirstNavLinkAfterOpen();
             }
         });
 
