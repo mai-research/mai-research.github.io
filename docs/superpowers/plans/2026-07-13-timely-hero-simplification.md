@@ -43,7 +43,7 @@ Change `.timely-hero-content` to a block container capped at 1100px. Cap its dir
 
 - [ ] **Step 3: Remove obsolete visual and breakpoint rules**
 
-Delete `.timely-hero-visual` rules, the tablet-only hero gap override, and the mobile visual padding override. Preserve mobile typography and spacing rules that still apply.
+Delete `.timely-hero-visual` rules, the tablet-only hero gap override, the mobile `.timely-hero-content` grid/gap override, and the mobile visual padding override. Preserve the mobile hero padding and typography rules that still apply.
 
 - [ ] **Step 4: Run the focused and complete tests**
 
