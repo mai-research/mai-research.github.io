@@ -68,6 +68,7 @@ class HTMLContractParser(HTMLParser):
         self.attributes = []
         self.ids = set()
         self.section_ids = set()
+        self.sections = []
         self.headings = []
         self.links = []
         self.anchors = []
@@ -76,6 +77,7 @@ class HTMLContractParser(HTMLParser):
         self.titles = []
         self.scripts = []
         self._hidden_elements = []
+        self._section_stack = []
         self._heading_tag = None
         self._heading_text = []
         self._anchor_href = None
@@ -101,6 +103,13 @@ class HTMLContractParser(HTMLParser):
             return
 
         self.attributes.append((tag, attributes))
+
+        for section in self._section_stack:
+            section["descendants"].append((tag, attributes))
+        if tag == "section":
+            section = {"attributes": attributes, "descendants": []}
+            self.sections.append(section)
+            self._section_stack.append(section)
 
         if "id" in attributes:
             self.ids.add(attributes["id"])
@@ -154,6 +163,8 @@ class HTMLContractParser(HTMLParser):
         if tag == "title" and self._title_text is not None:
             self.titles.append(" ".join(" ".join(self._title_text).split()))
             self._title_text = None
+        if tag == "section" and self._section_stack:
+            self._section_stack.pop()
 
     def handle_data(self, data):
         if self._collecting_script:
@@ -369,20 +380,30 @@ class PublicSiteContractTests(unittest.TestCase):
                     f"timely-agent.html must contain id={section_id!r}",
                 )
 
-        hero_match = re.search(
-            r'<section\b[^>]*\bid=["\']timely-hero["\'][^>]*>(.*?)</section\s*>',
-            html,
-            flags=re.IGNORECASE | re.DOTALL,
+        hero_sections = [
+            section
+            for section in parser.sections
+            if section["attributes"].get("id") == "timely-hero"
+        ]
+        self.assertEqual(
+            len(hero_sections),
+            1,
+            "timely-agent.html must contain exactly one live #timely-hero",
         )
-        self.assertIsNotNone(hero_match, "timely-agent.html must contain #timely-hero")
-        self.assertNotIn(
-            "timely-hero-visual",
-            html,
-            "timely-agent.html must not contain the TIMELY hero visual",
+        hero_elements = [
+            ("section", hero_sections[0]["attributes"]),
+            *hero_sections[0]["descendants"],
+        ]
+        self.assertFalse(
+            any(tag == "img" for tag, _ in hero_sections[0]["descendants"]),
+            "#timely-hero must not contain an image descendant",
         )
-        self.assertIsNone(
-            re.search(r"<img\b", hero_match.group(1), flags=re.IGNORECASE),
-            "#timely-hero must not contain an image",
+        self.assertFalse(
+            any(
+                "timely-hero-visual" in attributes.get("class", "").split()
+                for _, attributes in hero_elements
+            ),
+            "#timely-hero must not contain the TIMELY hero visual class",
         )
 
         page_text = visible_text(html)
@@ -508,6 +529,34 @@ class PublicSiteContractTests(unittest.TestCase):
                     any(href == destination and text for href, text in parser.anchors),
                     f"{source} must contain a fallback link to {destination}",
                 )
+
+    def test_html_contract_parser_tracks_live_section_descendants(self):
+        parser = parse_html(
+            "<!-- <section id='timely-hero'><div class='timely-hero-visual'>"
+            "<img src='commented.svg'></div></section> -->"
+            "<section id='timely-hero'><p>Primary hero</p></section>"
+            "<section id='timely-hero'><div class='timely-hero-visual'>"
+            "<img src='duplicate.svg'></div></section>"
+        )
+        hero_sections = [
+            section
+            for section in getattr(parser, "sections", [])
+            if section["attributes"].get("id") == "timely-hero"
+        ]
+
+        self.assertEqual(len(hero_sections), 2)
+        self.assertFalse(
+            any(tag == "img" for tag, _ in hero_sections[0]["descendants"])
+        )
+        self.assertTrue(
+            any(tag == "img" for tag, _ in hero_sections[1]["descendants"])
+        )
+        self.assertTrue(
+            any(
+                "timely-hero-visual" in attributes.get("class", "").split()
+                for _, attributes in hero_sections[1]["descendants"]
+            )
+        )
 
     def test_index_filters_hidden_projects_and_has_fallback_copy(self):
         inactive_markup = parse_html(
