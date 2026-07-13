@@ -1,128 +1,159 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
     const heroBackground = document.querySelector('.hero-background');
-    const currentYearSpan = document.getElementById('current-year');
-    const mainHeader = document.getElementById('main-header'); // Get header element
-    const mobileMenuToggle = document.getElementById('mobile-menu-toggle'); // Hamburger button
-    const navRightGroup = document.querySelector('.nav-right-group'); // Nav links + theme toggle container
-    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]'); // Links for smooth scroll & menu close
-
-    // --- Theme Toggle ---
-    const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const savedTheme = localStorage.getItem('theme');
     const heroButton = document.querySelector('.hero-button');
+    const currentYearSpan = document.getElementById('current-year');
+    const mainHeader = document.getElementById('main-header');
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const navRightGroup = document.querySelector('.nav-right-group');
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    const firstNavLink = navLinks[0];
+    let pendingNavFocusHandler = null;
+    const prefersReducedMotion = window.matchMedia
+        && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    function applyTheme(theme) {
-        const isDark = theme === 'dark';
-        // body.classList.toggle('dark-mode', isDark);
-        document.documentElement.classList.toggle('dark-mode', isDark);
+    function setupThemeToggle() {
+        const themeToggle = document.getElementById('theme-toggle');
+        if (!themeToggle) return;
+
         const icon = themeToggle.querySelector('i');
-        if (isDark) {
-            icon.classList.remove('fa-moon'); icon.classList.add('fa-sun');
-            themeToggle.setAttribute('aria-label', 'Switch to light mode');
-            themeToggle.setAttribute('title', 'Switch to light mode');
-        } else {
-            icon.classList.remove('fa-sun'); icon.classList.add('fa-moon');
-            themeToggle.setAttribute('aria-label', 'Switch to dark mode');
-            themeToggle.setAttribute('title', 'Switch to dark mode');
+        if (!icon) return;
+
+        function applyTheme(theme) {
+            const isDark = theme === 'dark';
+            document.documentElement.classList.toggle('dark-mode', isDark);
+            icon.classList.toggle('fa-moon', !isDark);
+            icon.classList.toggle('fa-sun', isDark);
+            const label = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+            themeToggle.setAttribute('aria-label', label);
+            themeToggle.setAttribute('title', label);
         }
+
+        applyTheme('dark');
+
+        themeToggle.addEventListener('click', () => {
+            const newTheme = document.documentElement.classList.contains('dark-mode')
+                ? 'light'
+                : 'dark';
+            localStorage.setItem('theme', newTheme);
+            applyTheme(newTheme);
+        });
     }
 
-    // let currentTheme = savedTheme || (userPrefersDark ? 'dark' : 'light');
-    let currentTheme = 'dark'
-    applyTheme(currentTheme);
+    setupThemeToggle();
 
-    themeToggle.addEventListener('click', () => {
-        // const newTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
-        const newTheme = document.documentElement.classList.contains('dark-mode') ? 'light' : 'dark';
-
-        localStorage.setItem('theme', newTheme);
-        applyTheme(newTheme);
-    });
-
-    // --- Header Style on Scroll ---
     function handleHeaderScroll() {
-        if (window.scrollY > 50) { // Add class after scrolling 50px
-            mainHeader.classList.add('scrolled');
-        } else {
-            mainHeader.classList.remove('scrolled');
-        }
+        if (!mainHeader) return;
+        mainHeader.classList.toggle('scrolled', window.scrollY > 50);
     }
-    window.addEventListener('scroll', handleHeaderScroll, { passive: true });
-    handleHeaderScroll(); // Initial check
 
+    if (mainHeader) {
+        window.addEventListener('scroll', handleHeaderScroll, { passive: true });
+        handleHeaderScroll();
+    }
 
-    // --- Hero Background Fade on Scroll ---
     function handleHeroFade() {
         if (!heroBackground) return;
-        const scrollY = window.scrollY;
-        const fadeEnd = window.innerHeight * 0.6; // Fade out over 60% of viewport height
-        let opacity = Math.max(0, 1 - (scrollY / fadeEnd));
+        const fadeEnd = window.innerHeight * 0.6;
+        const opacity = Math.max(0, 1 - (window.scrollY / fadeEnd));
         heroBackground.style.opacity = opacity;
-        // --- Apply opacity to the button ---
+
         if (heroButton) {
             heroButton.style.opacity = opacity;
-            // Optional: Make button unclickable when mostly faded
             heroButton.style.pointerEvents = opacity <= 0.1 ? 'none' : 'auto';
         }
     }
-    window.addEventListener('scroll', handleHeroFade, { passive: true });
-    handleHeroFade(); // Initial check
 
+    if (heroBackground) {
+        window.addEventListener('scroll', handleHeroFade, { passive: true });
+        handleHeroFade();
+    }
 
-    // --- Mobile Menu Toggle ---
-    mobileMenuToggle.addEventListener('click', () => {
-        const isOpened = body.classList.toggle('mobile-nav-open');
-        mobileMenuToggle.setAttribute('aria-expanded', isOpened);
-        // Optional: Change hamburger icon to 'X' when open
-        const icon = mobileMenuToggle.querySelector('i');
-        if(isOpened) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-xmark');
-            mobileMenuToggle.setAttribute('aria-label', 'Close navigation menu');
-        } else {
-             icon.classList.remove('fa-xmark');
-             icon.classList.add('fa-bars');
-             mobileMenuToggle.setAttribute('aria-label', 'Open navigation menu');
+    function setMobileMenuState(isOpen) {
+        body.classList.toggle('mobile-nav-open', isOpen);
+        if (!isOpen && navRightGroup && pendingNavFocusHandler) {
+            navRightGroup.removeEventListener('transitionend', pendingNavFocusHandler);
+            pendingNavFocusHandler = null;
         }
-    });
+        if (!mobileMenuToggle) return;
 
-    // --- Smooth Scrolling & Close Mobile Menu on Link Click ---
+        mobileMenuToggle.setAttribute('aria-expanded', String(isOpen));
+        mobileMenuToggle.setAttribute(
+            'aria-label',
+            isOpen ? 'Close navigation menu' : 'Open navigation menu'
+        );
+
+        const icon = mobileMenuToggle.querySelector('i');
+        if (icon) {
+            icon.classList.toggle('fa-bars', !isOpen);
+            icon.classList.toggle('fa-xmark', isOpen);
+        }
+    }
+
+    function focusFirstNavLinkAfterOpen() {
+        if (!firstNavLink) return;
+        if (!navRightGroup) {
+            firstNavLink.focus();
+            return;
+        }
+
+        pendingNavFocusHandler = () => {
+            pendingNavFocusHandler = null;
+            if (body.classList.contains('mobile-nav-open')) {
+                firstNavLink.focus();
+            }
+        };
+        navRightGroup.addEventListener('transitionend', pendingNavFocusHandler, { once: true });
+    }
+
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', () => {
+            const isOpen = !body.classList.contains('mobile-nav-open');
+            setMobileMenuState(isOpen);
+            if (isOpen) {
+                focusFirstNavLinkAfterOpen();
+            }
+        });
+
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && body.classList.contains('mobile-nav-open')) {
+                setMobileMenuState(false);
+                mobileMenuToggle.focus();
+            }
+        });
+    }
+
+    function handleViewportResize() {
+        if (window.innerWidth > 768 && body.classList.contains('mobile-nav-open')) {
+            setMobileMenuState(false);
+        }
+    }
+
+    window.addEventListener('resize', handleViewportResize);
+
     navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
+        link.addEventListener('click', event => {
+            const targetId = link.getAttribute('href');
+            const targetElement = targetId ? document.querySelector(targetId) : null;
+            if (!targetElement) return;
 
-            if (targetElement) {
-                const headerOffset = mainHeader.offsetHeight;
-                // Use offsetHeight of the scrolled state if header is scrolled for accuracy
-                const scrolledNavHeight = mainHeader.classList.contains('scrolled') ? mainHeader.querySelector('nav').offsetHeight + 16 : headerOffset; // +16 approx margin
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - scrolledNavHeight;
+            event.preventDefault();
+            const headerOffset = mainHeader ? mainHeader.offsetHeight : 0;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: prefersReducedMotion ? 'auto' : 'smooth'
+            });
 
-                // Close mobile menu if it's open
-                if (body.classList.contains('mobile-nav-open')) {
-                    body.classList.remove('mobile-nav-open');
-                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                    const icon = mobileMenuToggle.querySelector('i');
-                    icon.classList.remove('fa-xmark');
-                    icon.classList.add('fa-bars');
-                    mobileMenuToggle.setAttribute('aria-label', 'Open navigation menu');
-                }
+            if (body.classList.contains('mobile-nav-open')) {
+                setMobileMenuState(false);
             }
         });
     });
 
-    // --- Update Footer Year ---
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
     }
-
-}); // End DOMContentLoaded
+});

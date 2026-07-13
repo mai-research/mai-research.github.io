@@ -27,7 +27,7 @@
                 </div>
             </a>
 
-            <div class="nav-right-group">
+            <div class="nav-right-group" id="primary-navigation">
                 <ul class="nav-links">
                     <!-- <li><a href="#about">About</a></li> -->
                     <li><a href="#projects">Projects</a></li>
@@ -40,7 +40,8 @@
                 </button>
             </div>
 
-            <button id="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
+            <button id="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false"
+                aria-controls="primary-navigation">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </nav>
@@ -55,10 +56,11 @@
                     methodological development and applications of fundamental AI methodologies in medicine and health.
                     Our research involves various aspects of knowledge representation and reasoning, deep learning,
                     time-series analytics and the development of the next generation LLMs in the context of medicine and
-                    health. We are based at the <a href="https://www.kcl.ac.uk/bhi" target="_">Department of
-                        Biostatistics and Health Informatics</a>, <href="https: //www.kcl.ac.uk/" target="_">King's
-                        College London</a> and are part of the large <a href="https://phidatalab.org/about-us/"
-                            target="_">PHI Data Lab</a>.
+                    health. We are based at the <a href="https://www.kcl.ac.uk/bhi" target="_blank"
+                        rel="noopener noreferrer">Department of Biostatistics and Health Informatics</a>, <a
+                        href="https://www.kcl.ac.uk/" target="_blank" rel="noopener noreferrer">King's College
+                        London</a> and are part of the large <a href="https://phidatalab.org/about-us/" target="_blank"
+                        rel="noopener noreferrer">PHI Data Lab</a>.
 
                         <a href="#projects" class="hero-button">Explore Our Research</a>
 
@@ -171,40 +173,59 @@ loadPublications();
 </script>
 
 <script>
-async function loadProjects() {
-  const response = await fetch('./data/projects.json');
-  const projects = await response.json();
+function externalLinkAttributes(url = '') { return /^https?:\/\//i.test(url) ? ' target="_blank" rel="noopener noreferrer"' : ''; }
 
+function projectImageClass(project = {}) {
+  return project.image_class === 'project-image--architecture'
+    ? ' project-image--architecture'
+    : '';
+}
+
+async function loadProjects() {
   const container = document.getElementById('projects-list');
 
-  container.innerHTML = projects.map(project => `
-    <article class="project-card">
-      <img
-        src="${project.image}"
-        alt="${project.image_alt || project.title}"
-        class="project-image"
-      >
+  try {
+    const response = await fetch('./data/projects.json');
+    if (!response.ok) {
+      throw new Error(`Project request failed with status ${response.status}`);
+    }
 
-      <div class="project-body">
-        <h3 class="project-title">
-          ${project.title_link
-            ? `<a href="${project.title_link}" target="_blank" rel="noopener noreferrer">${project.title}</a>`
-            : project.title}
-        </h3>
+    const projects = (await response.json()).filter(project => !project.hidden);
 
-        <div class="project-text">${project.text}</div>
-      </div>
+    container.innerHTML = projects.map(project => `
+      <article class="project-card">
+        <img
+          src="${project.image}"
+          alt="${project.image_alt || project.title}"
+          loading="lazy"
+          decoding="async"
+          class="project-image${projectImageClass(project)}"
+        >
 
-      ${project.link ? `
-        <div class="project-footer">
-          <a href="${project.link}" target="_blank" rel="noopener noreferrer" class="project-link">
-            ${project.link_label || 'View on GitHub'}
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
+        <div class="project-body">
+          <h3 class="project-title">
+            ${project.title_link
+              ? `<a href="${project.title_link}"${externalLinkAttributes(project.title_link)}>${project.title}</a>`
+              : project.title}
+          </h3>
+
+          <div class="project-text">${project.text}</div>
         </div>
-      ` : ''}
-    </article>
-  `).join('');
+
+        ${project.link ? `
+          <div class="project-footer">
+            <a href="${project.link}"${externalLinkAttributes(project.link)} class="project-link">
+              ${project.link_label || 'View on GitHub'}
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        ` : ''}
+      </article>
+    `).join('');
+  } catch (error) {
+    container.innerHTML = '<p class="load-error" role="status">Unable to load projects right now. Please try again later.</p>';
+    console.error('Unable to load projects:', error);
+  }
 }
 
 loadProjects();
