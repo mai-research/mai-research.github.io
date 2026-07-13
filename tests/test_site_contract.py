@@ -73,12 +73,14 @@ class HTMLContractParser(HTMLParser):
         self.anchors = []
         self.meta_refresh = []
         self.canonical = []
+        self.titles = []
         self.scripts = []
         self._hidden_elements = []
         self._heading_tag = None
         self._heading_text = []
         self._anchor_href = None
         self._anchor_text = []
+        self._title_text = None
         self._collecting_script = False
         self._script_text = []
 
@@ -117,6 +119,8 @@ class HTMLContractParser(HTMLParser):
         if tag == "link" and "canonical" in attributes.get("rel", "").casefold().split():
             if "href" in attributes:
                 self.canonical.append(attributes["href"])
+        if tag == "title":
+            self._title_text = []
         if tag in self.HEADING_TAGS and self._heading_tag is None:
             self._heading_tag = tag
             self._heading_text = []
@@ -147,6 +151,9 @@ class HTMLContractParser(HTMLParser):
             self.anchors.append((self._anchor_href, text))
             self._anchor_href = None
             self._anchor_text = []
+        if tag == "title" and self._title_text is not None:
+            self.titles.append(" ".join(" ".join(self._title_text).split()))
+            self._title_text = None
 
     def handle_data(self, data):
         if self._collecting_script:
@@ -158,6 +165,8 @@ class HTMLContractParser(HTMLParser):
             self._heading_text.append(data)
         if self._anchor_href is not None:
             self._anchor_text.append(data)
+        if self._title_text is not None:
+            self._title_text.append(data)
 
 
 def read(relative_path):
@@ -473,6 +482,11 @@ class PublicSiteContractTests(unittest.TestCase):
                     parser.canonical[0],
                     destination,
                     f"{source} canonical link must point exactly to {destination}",
+                )
+                self.assertEqual(
+                    parser.titles,
+                    ["Project moved | MAI Research Group"],
+                    f"{source} must use the exact legacy redirect title",
                 )
                 self.assertTrue(
                     any(href == destination and text for href, text in parser.anchors),
