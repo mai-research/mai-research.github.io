@@ -505,19 +505,92 @@ class PublicSiteContractTests(unittest.TestCase):
         html = read("index.html")
         parser = parse_html(html)
         scripts = " ".join(javascript_without_comments(script) for script in parser.scripts)
+        project_scripts = [
+            script for script in parser.scripts if "function loadProjects" in script
+        ]
+        self.assertEqual(len(project_scripts), 1)
+        project_script = project_scripts[0]
+
+        navigation_groups = [
+            attributes
+            for tag, attributes in parser.attributes
+            if tag == "div"
+            and "nav-right-group" in attributes.get("class", "").split()
+        ]
+        self.assertEqual(len(navigation_groups), 1)
+        with self.subTest(accessibility_hook="navigation id"):
+            self.assertEqual(navigation_groups[0].get("id"), "primary-navigation")
+
+        mobile_toggles = [
+            attributes
+            for tag, attributes in parser.attributes
+            if tag == "button" and attributes.get("id") == "mobile-menu-toggle"
+        ]
+        self.assertEqual(len(mobile_toggles), 1)
+        with self.subTest(accessibility_hook="toggle aria-controls"):
+            self.assertEqual(
+                mobile_toggles[0].get("aria-controls"), "primary-navigation"
+            )
+
+        institution_links = {
+            attributes.get("href"): attributes
+            for tag, attributes in parser.attributes
+            if tag == "a"
+            and attributes.get("href")
+            in {
+                "https://www.kcl.ac.uk/bhi",
+                "https://www.kcl.ac.uk/",
+                "https://phidatalab.org/about-us/",
+            }
+        }
+        for institution_url in (
+            "https://www.kcl.ac.uk/bhi",
+            "https://www.kcl.ac.uk/",
+            "https://phidatalab.org/about-us/",
+        ):
+            with self.subTest(institution_url=institution_url):
+                self.assertIn(institution_url, institution_links)
+                self.assertEqual(institution_links[institution_url].get("target"), "_blank")
+                self.assertEqual(
+                    institution_links[institution_url].get("rel"),
+                    "noopener noreferrer",
+                )
 
         filter_pattern = (
             r"\.filter\s*\(\s*\(?\s*project\s*\)?\s*=>"
             r"\s*!\s*project\.hidden\s*\)"
         )
-        self.assertIsNotNone(
-            re.search(filter_pattern, scripts, flags=re.DOTALL),
-            "index.html must actively filter hidden projects",
+        with self.subTest(project_contract="hidden filter"):
+            self.assertIsNotNone(
+                re.search(filter_pattern, scripts, flags=re.DOTALL),
+                "index.html must actively filter hidden projects",
+            )
+        with self.subTest(project_contract="HTTP status check"):
+            self.assertRegex(project_script, r"if\s*\(\s*!\s*response\.ok\s*\)")
+        with self.subTest(project_contract="external link helper"):
+            self.assertIn(
+                "function externalLinkAttributes(url = '') { return "
+                "/^https?:\\/\\//i.test(url) ? "
+                "' target=\"_blank\" rel=\"noopener noreferrer\"' : ''; }",
+                project_script,
+            )
+            self.assertIn(
+                "${externalLinkAttributes(project.title_link)}", project_script
+            )
+            self.assertIn("${externalLinkAttributes(project.link)}", project_script)
+        fallback_markup = (
+            '<p class="load-error" role="status">Unable to load projects right now. '
+            "Please try again later.</p>"
         )
-        self.assertTrue(
-            "Unable to load projects" in f"{visible_text(html)} {scripts}",
-            "index.html must provide project-load fallback copy",
-        )
+        with self.subTest(project_contract="exact fallback markup"):
+            self.assertIn(fallback_markup, project_script)
+            self.assertRegex(project_script, r"catch\s*\([^)]*\)\s*\{")
+            self.assertRegex(project_script, r"console\.error\s*\(")
+            self.assertLess(
+                project_script.index("document.getElementById('projects-list')"),
+                project_script.index("try"),
+                "Obtain the project container before entering the fetch/render try block",
+            )
         self.assertIn(
             "https://www.kcl.ac.uk/",
             parser.links,
