@@ -175,6 +175,12 @@ loadPublications();
 <script>
 function externalLinkAttributes(url = '') { return /^https?:\/\//i.test(url) ? ' target="_blank" rel="noopener noreferrer"' : ''; }
 
+function projectImageClass(project = {}) {
+  return project.image_class === 'project-image--architecture'
+    ? ' project-image--architecture'
+    : '';
+}
+
 async function loadProjects() {
   const container = document.getElementById('projects-list');
 
@@ -191,7 +197,9 @@ async function loadProjects() {
         <img
           src="${project.image}"
           alt="${project.image_alt || project.title}"
-          class="project-image"
+          loading="lazy"
+          decoding="async"
+          class="project-image${projectImageClass(project)}"
         >
 
         <div class="project-body">
