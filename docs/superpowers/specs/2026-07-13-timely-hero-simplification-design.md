@@ -20,4 +20,4 @@ The hero becomes a single left-aligned text column within the existing 1100px pa
 
 - Add a contract assertion that the project page contains no hero visual or hero image.
 - Run the complete public-site contract suite and JavaScript/format checks.
-- Inspect the page at desktop and mobile widths for balance, wrapping, overflow, and asset failures.
+- Inspect the page at desktop, mid-width, mobile, and the 768/769px breakpoint boundary for balance, wrapping, overflow, and asset failures.
