@@ -4,7 +4,7 @@
 
 This audit covers the public homepage, the TIMELY-Agent project page, project and team data, publication rendering, shared navigation, and the three legacy entry points (`method.html`, `docs.html`, and `people/zina.html`). The review combined source inspection, repository-wide content searches, local HTTP response checks for pages and assets, JSON and JavaScript validation, and the automated public-site contract suite.
 
-The required live browser connection was unavailable in the review environment, so final visual and interaction checks at desktop and mobile widths remain a release check rather than a completed part of this audit.
+Live browser QA was completed against the local HTTP build at desktop and mobile widths. Both the homepage and TIMELY-Agent page rendered without broken images, console warnings, or horizontal overflow. The responsive menu opened and closed correctly, responded to Escape, and reset after returning to a desktop viewport. The browser inspection sandbox does not expose element `focus()` methods, so focus transitions were verified through the source contract rather than asserted from that isolated inspection context.
 
 ## Verified release behaviour
 
@@ -14,6 +14,7 @@ The required live browser connection was unavailable in the review environment, 
 - The shared mobile navigation exposes its expanded state, moves focus into the open menu, closes on Escape, restores focus to the toggle, and resets when the viewport returns to desktop width.
 - Project loading checks unsuccessful responses and presents a readable status message if project data cannot be loaded.
 - Legacy METHOD and superseded profile/document pages contain minimal canonical meta-refresh redirects with visible fallback links; historical METHOD assets and records remain in the repository.
+- Live redirect checks confirmed that `method.html` resolves to `timely-agent.html`, while `docs.html` and `people/zina.html` resolve to the homepage.
 
 ## Prioritised follow-up findings
 
