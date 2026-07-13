@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIMELY-Agent | MAI Research Group</title>
+    <meta name="description" content="TIMELY-Agent is an MAI framework for building clinically grounded, auditable multimodal reasoning benchmarks from longitudinal electronic health records.">
+    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body class="timely-page">
+    <header id="main-header">
+        <nav aria-label="Primary navigation">
+            <a href="index.html" class="logo-link" aria-label="MAI Research Group home">
+                <div class="logo svg-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" width="100" height="40"
+                        aria-labelledby="logoTitle" role="img">
+                        <title id="logoTitle">MAI Logo</title>
+                        <path class="svg-primary" d="M10 35 V5 L20 15 L30 5 V35" stroke-width="4" fill="none"></path>
+                        <path class="svg-accent" d="M40 35 L45 20 L50 35 M42.5 28 H47.5" stroke-width="3" fill="none"></path>
+                        <line class="svg-accent" x1="58" y1="20" x2="58" y2="35" stroke-width="3"></line>
+                        <circle class="svg-accent" cx="58" cy="15" r="2" fill="currentColor"></circle>
+                    </svg>
+                </div>
+            </a>
+
+            <div id="primary-navigation" class="nav-right-group">
+                <ul class="nav-links">
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#framework">Framework</a></li>
+                    <li><a href="#privacy">Privacy</a></li>
+                    <li><a href="#foundations">Foundations</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button id="theme-toggle" aria-label="Switch to dark mode" title="Switch to dark mode">
+                    <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <button id="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false"
+                aria-controls="primary-navigation">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="timely-hero">
+            <div class="timely-hero-content">
+                <div>
+                    <p class="timely-eyebrow">Active Research</p>
+                    <h1>TIMELY-Agent</h1>
+                    <p class="timely-lead">An agentic framework for building clinically grounded, auditable multimodal reasoning benchmarks from longitudinal EHR data.</p>
+                </div>
+                <div class="timely-hero-visual">
+                    <img src="images/timely-agent-overview.svg" alt="Four-stage TIMELY-Agent workflow from clinical knowledge through governed retrieval and reasoning episodes to tasks and audit">
+                </div>
+            </div>
+        </section>
+
+        <section id="overview">
+            <div class="timely-content">
+                <h2>Overview</h2>
+                <p>Electronic health records are long, irregular and multimodal. Static question answering and endpoint prediction can hide whether a model used the right evidence at the right time. TIMELY-Agent reconstructs clinically meaningful patient state before evaluation begins.</p>
+                <p>A reasoning episode is a compact, provenance-preserving view of patient history centred on a clinically meaningful question. It brings together temporally bounded structured data and relevant clinical text without reducing the record to a single label or exposing an entire admission at once.</p>
+            </div>
+        </section>
+
+        <section id="framework">
+            <div class="timely-content">
+                <h2>Framework</h2>
+                <div class="timely-workflow-grid">
+                    <article class="timely-workflow-card">
+                        <h3>Clinical knowledge</h3>
+                        <p>Define meaningful conditions, anchor events and temporal patterns from reviewed clinical sources.</p>
+                    </article>
+                    <article class="timely-workflow-card">
+                        <h3>Governed retrieval</h3>
+                        <p>Retrieve relevant evidence through controlled interfaces inside secure local environments.</p>
+                    </article>
+                    <article class="timely-workflow-card">
+                        <h3>Reasoning episodes</h3>
+                        <p>Align structured trajectories with clinical note fragments around meaningful questions.</p>
+                    </article>
+                    <article class="timely-workflow-card">
+                        <h3>Tasks and audit</h3>
+                        <p>Evaluate temporal grounding, cross-modal consistency and the use of supporting evidence.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="privacy">
+            <div class="timely-content">
+                <h2>Privacy boundary</h2>
+                <p>TIMELY-Agent separates knowledge-facing work from patient-facing computation. Public clinical sources can support benchmark specification, while patient-level data remain within governed local infrastructure.</p>
+                <div class="privacy-boundary" role="group" aria-label="Reviewed specifications move into governed local infrastructure while patient data remain local">
+                    <div class="privacy-panel">
+                        <h3>Knowledge-facing work</h3>
+                        <p>Public clinical sources support reviewed benchmark specifications.</p>
+                    </div>
+                    <div class="privacy-arrow" aria-hidden="true">
+                        <span>Reviewed specifications</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                    <div class="privacy-panel">
+                        <h3>Patient-facing computation</h3>
+                        <p>Patient-level evidence remains within governed local infrastructure.</p>
+                    </div>
+                </div>
+                <p>Reviewed specifications may cross into the local environment; real patient data do not cross out. This separation supports traceability without claiming that the current research prototype is a complete deployment or privacy guarantee.</p>
+            </div>
+        </section>
+
+        <section id="foundations">
+            <div class="timely-content">
+                <h2>Research foundations</h2>
+                <p>Pilot implementations explore multimodal episode construction and behavioural auditing on critical-care data. These foundations inform the wider TIMELY-Agent framework while the research programme continues to develop.</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="timely-content timely-contact">
+                <h2>Get in touch</h2>
+                <p>Interested in trustworthy clinical agents, temporal reasoning or multimodal benchmark design? Contact the MAI Research Group.</p>
+                <a href="mailto:zina.ibrahim@kcl.ac.uk" class="project-link">Email the research group</a>
+                <p class="timely-resource-note">Publications and project resources will be linked here when available.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> MAI Research Group. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
