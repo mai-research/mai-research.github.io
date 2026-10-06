@@ -12,7 +12,7 @@
   --border-color: #dee2e6;
   --link-color: #005f73;
   --link-hover-color: #0a9396;
-  --nav-bg-scrolled: rgba(255, 255, 255, 0.85);
+  --nav-bg-scrolled: #ffffff;
   --nav-border-scrolled: rgba(0, 0, 0, 0.1);
   --nav-shadow-scrolled: 0 4px 15px rgba(0, 0, 0, 0.05);
   --hero-text: #ffffff;
@@ -41,7 +41,7 @@ body.dark-mode {
   --border-color: #444;
   --link-color: #94d2bd;
   --link-hover-color: #ade8f4;
-  --nav-bg-scrolled: rgba(44, 44, 44, 0.85);
+  --nav-bg-scrolled: #2c2c2c;
   --nav-border-scrolled: rgba(255, 255, 255, 0.15);
   --nav-shadow-scrolled: 0 4px 15px rgba(0, 0, 0, 0.2);
   --hero-text: #ffffff;
@@ -116,7 +116,8 @@ a[href="https://phidatalab.org/about-us/"] { color: #7db48d; }
   align-items: center;
   border: 1px solid var(--nav-border-scrolled);
   border-radius: 50px;
-  background-color: transparent;
+  background-color: var(--nav-bg-scrolled);
+  box-shadow: var(--nav-shadow-scrolled);
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   transition: background-color 0.3s ease, border 0.3s ease, padding 0.3s ease;
@@ -651,6 +652,138 @@ footer {
   line-height: 1.8;
 }
 
+#experience {
+  background-color: var(--secondary-color);
+  scroll-margin-top: 6.5rem;
+}
+
+.timely-showcase-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2rem;
+  align-items: end;
+  margin-bottom: 2.5rem;
+}
+
+.timely-showcase-intro h2 {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.timely-showcase-intro p:not(.timely-section-kicker) {
+  max-width: 760px;
+  margin-bottom: 0;
+}
+
+.timely-section-kicker {
+  color: var(--primary-color);
+  font-family: var(--font-primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  margin-bottom: 0.65rem;
+  text-transform: uppercase;
+}
+
+.timely-website-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  min-height: 48px;
+  padding: 0.8rem 1.35rem;
+  background-color: var(--primary-color);
+  border-radius: 50px;
+  color: var(--hero-text);
+  font-family: var(--font-primary);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.timely-website-link:hover {
+  color: var(--hero-text);
+  transform: translateY(-2px);
+}
+
+.timely-video-card {
+  margin: 0 0 2.5rem;
+  overflow: hidden;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  box-shadow: 0 20px 46px rgba(var(--rgb-overlay-color), 0.14);
+}
+
+.timely-demo-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background-color: #0d2d45;
+}
+
+.timely-demo-video::cue {
+  color: #ffffff;
+  background-color: rgba(4, 31, 45, 0.88);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.35;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+}
+
+.timely-video-card figcaption {
+  padding: 1rem 1.25rem 1.15rem;
+  color: var(--text-color);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.timely-gallery-heading {
+  margin: 0 0 1.25rem;
+  color: var(--primary-color);
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+.timely-product-showcase {
+  display: grid;
+  gap: 2rem;
+}
+
+.timely-product-shot {
+  margin: 0;
+  overflow: hidden;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(var(--rgb-overlay-color), 0.10);
+}
+
+.timely-product-shot img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background-color: #f8f9fa;
+}
+
+.timely-product-shot figcaption {
+  padding: 1rem 1.25rem 1.15rem;
+  color: var(--text-color);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.timely-demo-note {
+  margin: 1.5rem 0 0;
+  color: var(--primary-color);
+  font-family: var(--font-primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .timely-workflow-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -843,6 +976,29 @@ footer {
 
   .timely-hero-content .timely-lead {
     font-size: 1.05rem;
+  }
+
+  .timely-showcase-intro {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .timely-website-link {
+    justify-self: start;
+    white-space: normal;
+  }
+
+  .timely-product-showcase {
+    gap: 1.25rem;
+  }
+
+  .timely-product-shot {
+    border-radius: 12px;
+  }
+
+  .timely-video-card {
+    margin-bottom: 2rem;
+    border-radius: 12px;
   }
 
   h2 {
