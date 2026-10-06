@@ -1,0 +1,37 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.400
+What did the record show at this exact moment?
+TIMELY AGENT turns longitudinal data into an inspectable answer.
+
+00:00:05.400 --> 00:00:11.800
+Start with a synthetic record.
+Choose a patient, a question and a model without exposing real patient data.
+
+00:00:11.800 --> 00:00:18.200
+Why freeze the decision time?
+The agent can only use information available by this point in the record.
+
+00:00:18.200 --> 00:00:25.600
+Follow the answer and the evidence together.
+Current findings remain distinct from earlier clinical episodes.
+
+00:00:25.600 --> 00:00:32.000
+What supports the conclusion?
+The timeline keeps the clinical course and decision boundary visible.
+
+00:00:32.000 --> 00:00:41.400
+Open any conclusion to inspect its evidence.
+Rules stay connected to the guideline passages that define them.
+
+00:00:41.400 --> 00:00:49.800
+The trace shows how the answer was assembled.
+Engine runs, record reads, model calls and timings remain auditable.
+
+00:00:49.800 --> 00:00:59.200
+Compare trajectories, not just final labels.
+Synthetic cases align at onset so divergent courses become visible.
+
+00:00:59.200 --> 00:01:05.000
+TIMELY AGENT connects clinical knowledge, temporal reasoning and auditability.
+Explore the public project at timely-agent.com.

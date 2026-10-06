@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TIMELY-Agent | MAI Research Group</title>
     <meta name="description" content="TIMELY-Agent is an MAI framework for building clinically grounded, auditable multimodal reasoning benchmarks from longitudinal electronic health records.">
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -31,6 +31,7 @@
             <div id="primary-navigation" class="nav-right-group">
                 <ul class="nav-links">
                     <li><a href="#overview">Overview</a></li>
+                    <li><a href="#experience">Live system</a></li>
                     <li><a href="#framework">Framework</a></li>
                     <li><a href="#privacy">Privacy</a></li>
                     <li><a href="#foundations">Foundations</a></li>
@@ -64,6 +65,56 @@
                 <h2>Overview</h2>
                 <p>Electronic health records are long, irregular and multimodal. Static question answering and endpoint prediction can hide whether a model used the right evidence at the right time. TIMELY-Agent reconstructs clinically meaningful patient state before evaluation begins.</p>
                 <p>A reasoning episode is a compact, provenance-preserving view of patient history centred on a clinically meaningful question. It brings together temporally bounded structured data and relevant clinical text without reducing the record to a single label or exposing an entire admission at once.</p>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="timely-content">
+                <div class="timely-showcase-intro">
+                    <div>
+                        <p class="timely-section-kicker">Live system</p>
+                        <h2>From record to auditable reasoning</h2>
+                        <p>TIMELY AGENT reads synthetic longitudinal records at a fixed decision time, combines deterministic guideline engines with agentic orchestration, and keeps each conclusion inspectable across the conversation, timeline, evidence and trace.</p>
+                    </div>
+                    <a href="https://timely-agent.com/" target="_blank" rel="noopener noreferrer" class="project-link timely-website-link">
+                        Visit the TIMELY AGENT website
+                        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <figure class="timely-video-card">
+                    <video class="timely-demo-video"
+                        src="videos/timely-agent-demo.mp4"
+                        poster="images/timely-agent-demo-poster.jpg"
+                        controls="controls"
+                        playsinline="playsinline"
+                        autoplay="autoplay"
+                        muted="muted"
+                        loop="loop"
+                        preload="auto"
+                        aria-label="A 65-second walkthrough of TIMELY AGENT using synthetic patient records">
+                        <track src="videos/timely-agent-demo.vtt" kind="captions" srclang="en" label="English" default="default">
+                    </video>
+                    <figcaption><strong>Product walkthrough.</strong> A concise tour of decision-time reasoning, evidence provenance, execution traces and cross-record trajectory comparison. The video starts muted; use the player control to hear the original ambient soundtrack.</figcaption>
+                </figure>
+
+                <h3 class="timely-gallery-heading">Selected views</h3>
+                <div class="timely-product-showcase">
+                    <figure class="timely-product-shot timely-product-shot--primary">
+                        <img src="images/timely-agent-demo-reasoning.png"
+                            alt="TIMELY AGENT answering a question about synthetic patient 07 beside the longitudinal AKI timeline at the selected decision time"
+                            loading="lazy" decoding="async">
+                        <figcaption>A synthetic record at a fixed decision time: the agent response, episode status and supporting longitudinal evidence remain visible together.</figcaption>
+                    </figure>
+                    <figure class="timely-product-shot">
+                        <img src="images/timely-agent-demo-compare.png"
+                            alt="TIMELY AGENT comparing two synthetic patient trajectories aligned at AKI onset"
+                            loading="lazy" decoding="async">
+                        <figcaption>Cross-record comparison aligns synthetic trajectories at clinical onset so divergent courses can be inspected side by side.</figcaption>
+                    </figure>
+                </div>
+
+                <p class="timely-demo-note">Synthetic records only · Research prototype · Not for clinical use</p>
             </div>
         </section>
 
@@ -125,7 +176,7 @@
                 <h2>Get in touch</h2>
                 <p>Interested in trustworthy clinical agents, temporal reasoning or multimodal benchmark design? Contact the MAI Research Group.</p>
                 <a href="mailto:zina.ibrahim@kcl.ac.uk" class="project-link">Email the research group</a>
-                <p class="timely-resource-note">Publications and project resources will be linked here when available.</p>
+                <p class="timely-resource-note">Visit the public TIMELY AGENT website for the latest project overview.</p>
             </div>
         </section>
     </main>
