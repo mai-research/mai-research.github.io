@@ -477,7 +477,14 @@ class PublicSiteContractTests(unittest.TestCase):
         html = read("timely-agent.html")
         parser = parse_html(html)
 
-        for section_id in ("overview", "framework", "privacy", "foundations", "contact"):
+        for section_id in (
+            "overview",
+            "experience",
+            "framework",
+            "privacy",
+            "foundations",
+            "contact",
+        ):
             with self.subTest(section_id=section_id):
                 self.assertIn(
                     section_id,
@@ -519,7 +526,7 @@ class PublicSiteContractTests(unittest.TestCase):
                     "timely-agent.html must not publish a Status or Roadmap heading",
                 )
         resource_note = (
-            "Publications and project resources will be linked here when available."
+            "Visit the public TIMELY AGENT website for the latest project overview."
         )
         self.assertTrue(
             resource_note in page_text,
@@ -558,6 +565,171 @@ class PublicSiteContractTests(unittest.TestCase):
             self.assertEqual(privacy_boundaries[0].get("role"), "group")
         with self.subTest(accessibility_hook="privacy group label"):
             self.assertTrue(privacy_boundaries[0].get("aria-label", "").strip())
+
+    def test_timely_page_showcases_public_site_and_synthetic_demo(self):
+        html = read("timely-agent.html")
+        parser = parse_html(html)
+        experience_sections = [
+            section
+            for section in parser.sections
+            if section["attributes"].get("id") == "experience"
+        ]
+
+        self.assertEqual(
+            len(experience_sections),
+            1,
+            "timely-agent.html must contain exactly one #experience section",
+        )
+        experience = experience_sections[0]
+        images = [
+            attributes
+            for tag, attributes in experience["descendants"]
+            if tag == "img"
+        ]
+        expected_images = {
+            "images/timely-agent-demo-reasoning.png",
+            "images/timely-agent-demo-compare.png",
+        }
+        self.assertEqual({image.get("src") for image in images}, expected_images)
+        for image in images:
+            with self.subTest(image=image.get("src")):
+                self.assertTrue(image.get("alt", "").strip())
+                self.assertEqual(image.get("loading"), "lazy")
+                self.assertEqual(image.get("decoding"), "async")
+                self.assert_file_exists(image["src"])
+
+        public_links = [
+            attributes
+            for tag, attributes in experience["descendants"]
+            if tag == "a"
+            and attributes.get("href") == "https://timely-agent.com/"
+        ]
+        self.assertEqual(len(public_links), 1)
+        self.assertEqual(public_links[0].get("target"), "_blank")
+        self.assertEqual(
+            set(public_links[0].get("rel", "").split()),
+            {"noopener", "noreferrer"},
+        )
+        self.assertNotIn("app.timely-agent.com", html)
+
+    def test_timely_page_embeds_local_demo_video(self):
+        html = read("timely-agent.html")
+        parser = parse_html(html)
+        experience_sections = [
+            section
+            for section in parser.sections
+            if section["attributes"].get("id") == "experience"
+        ]
+
+        self.assertEqual(len(experience_sections), 1)
+        videos = [
+            attributes
+            for tag, attributes in experience_sections[0]["descendants"]
+            if tag == "video"
+        ]
+        self.assertEqual(
+            len(videos),
+            1,
+            "The TIMELY live-system section must contain one local demo video",
+        )
+
+        video = videos[0]
+        self.assertEqual(video.get("src"), "videos/timely-agent-demo.mp4")
+        self.assertEqual(
+            video.get("poster"), "images/timely-agent-demo-poster.jpg"
+        )
+        self.assertIn("controls", video)
+        self.assertIn("playsinline", video)
+        self.assertIn("autoplay", video)
+        self.assertIn("muted", video)
+        self.assertIn("loop", video)
+        self.assertEqual(video.get("preload"), "auto")
+        self.assert_file_exists(video["src"])
+        self.assert_file_exists(video["poster"])
+
+        caption_tracks = [
+            attributes
+            for tag, attributes in experience_sections[0]["descendants"]
+            if tag == "track" and attributes.get("kind") == "captions"
+        ]
+        self.assertEqual(len(caption_tracks), 1)
+        self.assertEqual(
+            caption_tracks[0].get("src"), "videos/timely-agent-demo.vtt"
+        )
+        self.assertEqual(caption_tracks[0].get("srclang"), "en")
+        self.assertIn("default", caption_tracks[0])
+        self.assert_file_exists(caption_tracks[0]["src"])
+
+    def test_timely_demo_captions_guide_the_viewer(self):
+        captions = read("videos/timely-agent-demo.vtt")
+        cue_timings = re.findall(
+            r"(?m)^(\d{2}:\d{2}:\d{2}\.\d{3}) --> (\d{2}:\d{2}:\d{2}\.\d{3})",
+            captions,
+        )
+
+        self.assertGreaterEqual(len(cue_timings), 8)
+        self.assertEqual(cue_timings[0][0], "00:00:00.000")
+        self.assertEqual(cue_timings[-1][1], "00:01:05.000")
+        self.assertGreaterEqual(
+            captions.count("?"),
+            2,
+            "The walkthrough should use occasional guiding questions",
+        )
+
+        narrative = captions.casefold()
+        for concept in (
+            "synthetic record",
+            "decision time",
+            "evidence",
+            "trace",
+            "trajectories",
+        ):
+            with self.subTest(concept=concept):
+                self.assertIn(concept, narrative)
+
+        css = read("style.css")
+        cue_rule = re.search(
+            r"\.timely-demo-video::cue\s*\{(?P<body>[^{}]*)\}",
+            css,
+            flags=re.DOTALL,
+        )
+        self.assertIsNotNone(cue_rule, "TIMELY captions need a readable cue style")
+        if cue_rule is not None:
+            self.assertRegex(cue_rule.group("body"), r"background(?:-color)?\s*:")
+            self.assertRegex(cue_rule.group("body"), r"color\s*:")
+
+    def test_scrolled_navigation_uses_an_opaque_surface(self):
+        css = read("style.css")
+        scrolled_nav_rule = re.search(
+            r"#main-header\.scrolled\s+nav\s*\{(?P<body>[^{}]*)\}",
+            css,
+            flags=re.DOTALL,
+        )
+
+        self.assertIsNotNone(scrolled_nav_rule)
+        if scrolled_nav_rule is not None:
+            body = scrolled_nav_rule.group("body")
+            self.assertRegex(
+                body,
+                r"background-color\s*:\s*var\(\s*--nav-bg-scrolled\s*\)",
+            )
+            self.assertRegex(
+                body,
+                r"box-shadow\s*:\s*var\(\s*--nav-shadow-scrolled\s*\)",
+            )
+
+        nav_backgrounds = re.findall(
+            r"--nav-bg-scrolled\s*:\s*([^;]+);",
+            css,
+        )
+        self.assertEqual(len(nav_backgrounds), 2)
+        for background in nav_backgrounds:
+            with self.subTest(background=background.strip()):
+                self.assertNotRegex(
+                    background,
+                    r"rgba\([^)]*,\s*0(?:\.\d+)?\s*\)",
+                    "The fixed navigation surface must be fully opaque",
+                )
 
     def test_timely_svg_is_sanitized_and_uses_approved_labels(self):
         svg_path = "images/timely-agent-overview.svg"
@@ -856,6 +1028,47 @@ class PublicSiteContractTests(unittest.TestCase):
             self.assertRegex(
                 contact_button_body,
                 r"color\s*:\s*var\(\s*--hero-text\s*\)",
+            )
+
+        showcase_intro_rules = re.findall(
+            r"\.timely-showcase-intro\s*\{(?P<body>[^{}]*)\}",
+            css,
+            flags=re.DOTALL,
+        )
+        with self.subTest(css_rule="TIMELY showcase intro"):
+            self.assertGreaterEqual(
+                len(showcase_intro_rules),
+                2,
+                "Define base and mobile rules for .timely-showcase-intro",
+            )
+        if showcase_intro_rules:
+            self.assertRegex(showcase_intro_rules[0], r"display\s*:\s*grid")
+
+        product_image_rule = re.search(
+            r"\.timely-product-shot\s+img\s*\{(?P<body>[^{}]*)\}",
+            css,
+            flags=re.DOTALL,
+        )
+        with self.subTest(css_rule="TIMELY showcase images"):
+            self.assertIsNotNone(product_image_rule)
+        if product_image_rule is not None:
+            image_rule_body = product_image_rule.group("body")
+            self.assertRegex(image_rule_body, r"width\s*:\s*100%")
+            self.assertRegex(image_rule_body, r"height\s*:\s*auto")
+            self.assertRegex(image_rule_body, r"display\s*:\s*block")
+
+        experience_rule = re.search(
+            r"#experience\s*\{(?P<body>[^{}]*)\}",
+            css,
+            flags=re.DOTALL,
+        )
+        with self.subTest(css_rule="TIMELY anchored experience section"):
+            self.assertIsNotNone(experience_rule)
+        if experience_rule is not None:
+            self.assertRegex(
+                experience_rule.group("body"),
+                r"scroll-margin-top\s*:\s*[^;]+",
+                "The fixed header must not obscure #experience anchor content",
             )
 
         script = javascript_without_comments(read("script.js"))
