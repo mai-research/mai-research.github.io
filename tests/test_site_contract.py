@@ -313,6 +313,25 @@ def css_rule_openings(source):
 
 
 class PublicSiteContractTests(unittest.TestCase):
+    def test_repository_excludes_macos_metadata(self):
+        ds_store_files = [
+            path.relative_to(ROOT)
+            for path in ROOT.rglob(".DS_Store")
+            if ".git" not in path.relative_to(ROOT).parts
+        ]
+        self.assertEqual(
+            ds_store_files,
+            [],
+            f"Remove macOS metadata files from the repository: {ds_store_files}",
+        )
+
+        ignore_rules = {
+            line.strip()
+            for line in read(".gitignore").splitlines()
+            if line.strip() and not line.lstrip().startswith("#")
+        }
+        self.assertIn(".DS_Store", ignore_rules)
+
     def assert_file_exists(self, relative_path):
         path = ROOT / relative_path
         self.assertTrue(path.is_file(), f"Required public file is missing: {relative_path}")
